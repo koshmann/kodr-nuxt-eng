@@ -1,15 +1,9 @@
 <template>
-  <body class="text-black font-body bg-gray-light">
-
-      
-
-      <nuxt />
-
-      <the-footer />
-
-  </body>
+	<body class="text-black font-body bg-gray-light">
+		<div class="wrap">
+			<the-header />
+			<Nuxt />
+			<the-footer />
+		</div>
+	</body>
 </template>
-
-<script>
-
-</script>

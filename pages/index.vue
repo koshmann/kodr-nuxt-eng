@@ -1,18 +1,19 @@
 <template>
-  <div id="main" class="bg-gray-light mx-3 rounded">
-
-    <main-page-hero />
-    <main-page-projects />
-    <main-page-number-features />
-
-  </div>
+	<div
+		id="main"
+		class="bg-gray-light mx-3 rounded"
+	>
+		<main-page-hero />
+		<main-page-projects />
+		<main-page-number-features />
+	</div>
 </template>
 
 <script>
-import { myPage } from "~/utils/transitions.js";
-export default {
-  transition: myPage
-}
+// import { myPage } from "~/utils/transitions.js";
+// export default {
+// 	transition: myPage
+// }
 </script>
 
 <style>
