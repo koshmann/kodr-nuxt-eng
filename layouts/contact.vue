@@ -3,10 +3,13 @@
 		<div class="wrap">
 			<the-header />
 			<Nuxt />
-			<transition name="page">
-				<footer-contact-footer v-if="$nuxt.$route.name === 'contacts'" />
-				<the-footer v-else />
-			</transition>
+			<footer-contact-footer />
 		</div>
 	</body>
 </template>
+<script>
+
+export default {
+	
+}
+</script>

@@ -1,14 +1,14 @@
 <template>
-	<section class="px-3">
+	<section class="px-3 pt-16 rounded-2xl bg-gray-light">
 		<div class="flex flex-row items-center">
 			<div class="flex-1">
-				<h1 class="text-5xl font-title">
+				<h1 class="text-5xl font-title font-medium">
 					Создаём сайты, <span class="text-gray">которые раскрывают потенциал Вашего бизнеса.</span>
 				</h1>
 				<p class="pt-2 pb-8 text-gray">
 					Дизайн. Интерфейсы. 3D графика. Диджитал.
 				</p>
-				<a class="btn border-red hover:text-white hover:bg-red ">
+				<a class="btn border-red hover:text-white hover:bg-red">
 					<span>Заказать проект</span>
 					<svg
 						class="hidden"
@@ -25,12 +25,8 @@
 				</a>
 			</div>
 
-			<div
-				class="flex-1"
-				width="750"
-				height="750"
-			>
-				<video
+			<div class="flex-1" width="750" height="750">
+				<!-- <video
 					id="herovideo"
 					width="750"
 					height="750"
@@ -38,11 +34,8 @@
 					playsinline=""
 					autoplay=""
 				>
-					<source
-						src="~/assets/cover.mp4"
-						type="video/mp4"
-					>
-				</video>
+					<source src="~/assets/cover.mp4" type="video/mp4">
+				</video> -->
 			</div>
 		</div>
 	</section>

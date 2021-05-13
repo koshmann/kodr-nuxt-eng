@@ -1,8 +1,8 @@
 <template>
-	<section class="px-3 py-24">
+	<section class="px-3 py-6 bg-gray-light rounded-2xl">
 		<div class="grid grid-cols-4 gap-32">
 			<div class="">
-				<h3 class="text-xl text-gray mb-4">
+				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem]">
 					Более <span class="text-gray-dark">720 тыс. человек</span>
 				</h3>
 				<p class="text-gray text-sm">
@@ -11,7 +11,7 @@
 			</div>
 
 			<div class="">
-				<h3 class="text-xl text-gray mb-4">
+				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem]">
 					Более <span class="text-gray-dark">64 млн. рублей</span>
 				</h3>
 				<p class="text-gray text-sm">
@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="">
-				<h3 class="text-xl text-gray mb-4">
+				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem]">
 					Более <span class="text-gray-dark">12 отраслей бизнеза</span>
 				</h3>
 				<p class="text-gray text-sm">
@@ -29,7 +29,7 @@
 			</div>
 
 			<div class="">
-				<h3 class="text-xl text-gray mb-4">
+				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem]">
 					Более <span class="text-gray-dark">960 тыс. человек</span>
 				</h3>
 				<p class="text-gray text-sm">

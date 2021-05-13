@@ -6,15 +6,23 @@ export const myPage = {
 	apper: true,
 	beforeEnter (el) {
 		gsap.set(el, {
-			scale: 0.9,
-			opacity: 0
+			yPercent: 90,
+			opacity: 0.75,
+			scale: 0.95,
+			borderRadius: '1rem',
 		})
 	},
 	enter(el, done) {
+		gsap.set(el, {
+			transformOrigin: 'center center',
+			borderRadius: '1rem'
+		});
 		gsap.to(el, {
-			duration: 0.5,
-			scale: 1,
+			ease: "power4.out",
+			duration: 0.75,
+			yPercent: 0,
 			opacity: 1,
+			scale: 1,
 			onComplete: done
 		});
 	},
@@ -25,10 +33,15 @@ export const myPage = {
 		})
 	},
 	leave(el, done) {
+		gsap.set(el, {
+			transformOrigin: 'center center',
+			borderRadius: '1rem'
+		});
 		gsap.to(el, {
-			duration: 0.5,
-			scale: 0.9,
-			opacity: 0,
+			ease: "power4.out",
+			duration: 0.75,
+			scale: 0.95,
+			opacity: 0.9,
 			onComplete: done
 		});
 	}

@@ -15,12 +15,32 @@ module.exports = {
 		ecmaVersion: 12,
 		sourceType: 'module',
 	},
-	plugins: [
-		'vue',
-	],
+	plugins: ['vue'],
 	rules: {
-		"vue/html-indent": ["error", "tab"],  // enforce tabs in template
-		"indent": ["error", "tab"]            // enforce tabs in script and js files
+		'vue/html-indent': ['error', 'tab'],
+		indent: ['error', 'tab'],
+		'vue/singleline-html-element-content-newline': 'off',
+		'vue/multiline-html-element-content-newline': 'off',
+		'vue/max-attributes-per-line': [
+			'error',
+			{
+				singleline: {
+					max: 5,
+					allowFirstLine: true,
+				},
+				multiline: {
+					max: 5,
+					allowFirstLine: true,
+				},
+			},
+		],
+		'vue/html-closing-bracket-newline': [
+			'error',
+			{
+				singleline: 'never',
+				multiline: 'always',
+			},
+		],
 	},
 	settings: {
 		'import/resolver': {
@@ -29,4 +49,4 @@ module.exports = {
 			},
 		},
 	},
-};
+}

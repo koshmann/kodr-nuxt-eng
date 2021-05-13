@@ -10,7 +10,7 @@
 					class="overflow-hidden relative h-20"
 				>
 					<div
-						class="fixed h-20 left-3 top-3 right-3 bottom-3 grid grid-cols-3 justify-between items-center p-3 rounded z-10 transition-colors duration-300"
+						class="fixed h-20 left-3 top-3 right-3 bottom-3 grid grid-cols-3 justify-between items-center p-3 rounded-lg z-10 transition-colors duration-300"
 						:class="{'stuck bg-white': stuck}"
 					>
 						<div class="hidden lg:flex flex-row items-center">
@@ -122,7 +122,7 @@
 						</div>
 					</div>
 					<div
-						class="fixed bg-white rounded h-20 left-3 top-3 right-3 bottom-3 opacity-0 transition duration-200 ease-in-out"
+						class="fixed bg-white rounded-lg h-20 left-3 top-3 right-3 bottom-3 opacity-0 transition duration-200 ease-in-out"
 						:class="{'opacity-100 visible': menuActive && !stuck}"
 					/>
 				</div>

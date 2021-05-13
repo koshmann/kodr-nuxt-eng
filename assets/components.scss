@@ -1,51 +1,51 @@
 .btn {
-  @apply inline-flex flex-row items-center px-6 py-3 border-2 cursor-pointer rounded transition-all duration-200 hover:transform hover:scale-95
+	@apply inline-flex flex-row items-center select-none px-6 py-3 border-2 cursor-pointer rounded-lg transition-all duration-200 hover:transform hover:scale-95;
 }
 
 .tag {
-  @apply inline-flex flex-row items-center px-6 py-3 mr-3 border-2 cursor-pointer rounded transition-all duration-200 hover:text-white hover:transform hover:scale-95
+	@apply inline-flex flex-row items-center select-none px-3 py-2 mr-3 border-2 cursor-pointer rounded-lg transition-all duration-200 hover:text-white hover:transform hover:scale-95;
 }
 
 .btn-link {
-  @apply text-gray inline-flex items-center hover:text-gray-dark transition-colors duration-200
+	@apply text-gray inline-flex items-center select-none hover:text-gray-dark transition-colors duration-200;
 }
 
 .btn-link span::before {
-  content: "";
-  bottom: -1px;
-  left: 0;
-  position: absolute;
-  height: 1px;
-  width: 100%;
-  background: currentColor;
+	content: '';
+	bottom: -1px;
+	left: 0;
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	background: currentColor;
 }
 
 .kodr-underline {
-    @apply relative;
-    
-    &::before {
-      content: "";
-      bottom: -1px;
-      left: 0;
-      position: absolute;
-      height: 1px;
-      width: 100%;
-      background: currentColor;
-    }
+	@apply relative;
+
+	&::before {
+		content: '';
+		bottom: -1px;
+		left: 0;
+		position: absolute;
+		height: 1px;
+		width: 100%;
+		background: currentColor;
+	}
 }
 
-.single-project .group h3::before {
-  content: "";
-  bottom: -1px;
-  left: 0;
-  position: absolute;
-  height: 1px;
-  width: 100%;
-  background: currentColor;
-  opacity: 0;
-  transition: .2s ease;
-}
+// .single-project .group h3::before {
+//   content: "";
+//   bottom: -1px;
+//   left: 0;
+//   position: absolute;
+//   height: 1px;
+//   width: 100%;
+//   background: currentColor;
+//   opacity: 0;
+//   transition: .2s ease;
+// }
 
-.single-project .group:hover h3::before {
-  opacity: 1;
-}
+// .single-project .group:hover h3::before {
+//   opacity: 1;
+// }

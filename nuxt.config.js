@@ -1,3 +1,19 @@
+import axios from 'axios'
+let dynamicProjectRoutes = () => {
+	return axios
+		.get('https://dev.kodr.agency/wp-json/wp/v2/projects?_fields=slug')
+		.then((res) => {
+			return res.data.map((project) => `/project/${project.slug}`)
+		})
+}
+// let dynamicProjectTagRoutes = () => {
+// 	return axios
+// 		.get('https://dev.kodr.agency/wp-json/wp/v2/tags?_fields=slug')
+// 		.then((res) => {
+// 			return res.data.map((tag) => `/${tag.slug}`)
+// 		})
+// }
+
 export default {
 	// Target: https://go.nuxtjs.dev/config-target
 	target: 'static',
@@ -6,28 +22,25 @@ export default {
 	head: {
 		title: 'kodr-nuxt',
 		htmlAttrs: {
-			lang: 'en'
+			lang: 'en',
 		},
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: '' }
+			{ hid: 'description', name: 'description', content: '' },
 		],
-		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-		]
+		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [
 		'~/assets/fonts.css',
 		'~/assets/components.scss',
-		'~/assets/route-transitions.css'
+		'~/assets/route-transitions.css',
 	],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [
-	],
+	plugins: [],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -48,11 +61,15 @@ export default {
 	axios: {},
 
 	tailwindcss: {
-		jit: true
+		jit: true,
 	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
-		transpile: ["gsap", "gsap/Draggable"]
-	}
+		transpile: ['gsap', 'gsap/Draggable'],
+	},
+	layoutTransition: 'bounce',
+	generate: {
+		routes: dynamicProjectRoutes,
+	},
 }
