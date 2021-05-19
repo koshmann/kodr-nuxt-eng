@@ -1,30 +1,17 @@
 <template>
+	<div id="main" class="bg-gray-dark mx-3 rounded-lg">
+		<section class="text-gray-light py-9 px-3">
+			<h2 class="text-2xl text-medium mb-3">
+				Спасибо, Ваше сообщение уже у нас.
+			</h2>
+			<p>Мы ответим в течение 24 часов.</p>
+			<p>Скоротайте ожидание за просмотром наших свежих кейсов.</p>
+		</section>
 
-	<transition name="bounce">
-		<loading v-if="$fetchState.pending" />
-		<section v-else-if="$fetchState.error">An error occurred :(</section>
-
-		<section v-else-if="!$fetchState.pending && !$fetchState.error" class="mx-3 px-3 py-6 bg-gray-light rounded-2xl">
-			<div
-				class="flex justify-between items-center pb-3 mb-6 border-gray-medium border-b"
-			>
-				<h2 class="text-3xl font-title font-medium text-gray max-w-xs leading-7">
-					{{ currentTag.name }}
-				</h2>
-				<nuxt-link
-					to="/projects"
-					class="btn text-gray border-gray-medium hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
-				>
-					<span class="mr-4">Все проекты</span>
-					<svg width="4" height="7" viewBox="0 0 4 7" fill="none">
-						<path d="M0 0L4 3.5L0 7V0Z" fill="currentColor" />
-					</svg>
-				</nuxt-link>
-			</div>
-
+		<section class="px-3 py-3 bg-gray-light rounded-2xl my-2">
 			<div class="grid grid-cols-2 gap-6">
 				<div
-					v-for="project in filteredProjects"
+					v-for="project in projects"
 					:key="project.id"
 					class="card single-project"
 				>
@@ -38,7 +25,7 @@
 									:src="project._embedded['wp:featuredmedia'][0].source_url"
 									class="absolute top-0 left-0 h-full object-cover w-full transition duration-500 ease-in-out group-hover:transform group-hover:scale-110"
 									alt=""
-								>
+								/>
 								<div class="absolute top-4 left-4">
 									<h3 class="font-title font-medium text-xl mb-2">
 										{{ project.title.rendered }}
@@ -66,37 +53,38 @@
 					</div>
 				</div>
 			</div>
-		</section>
-	</transition>
 
+			<div class="flex justify-center align-middle mt-6">
+				<a
+					href="#"
+					class="btn text-gray border-gray-medium hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
+				>
+					<span class="mr-4">Все проекты</span>
+					<svg width="4" height="7" viewBox="0 0 4 7" fill="none">
+						<path d="M0 0L4 3.5L0 7V0Z" fill="currentColor" />
+					</svg>
+				</a>
+			</div>
+		</section>
+	</div>
 </template>
 
 <script>
 export default {
 	data() {
 		return {
-			slug: this.$route.params.slug,
+			projectTags: []
 		}
 	},
 	async fetch() {
-		await this.$store.dispatch('getProjects');
-		await this.$store.dispatch('getTags');
+		await this.$store.dispatch("getProjects");
 	},
 	computed: {
-		// projects() {
-		// 	return this.$store.state.projects
-		// },
-		currentTag() {
-			return this.$store.state.tags.find(tag => tag.slug === this.slug);
+		projects() {
+			return this.$store.state.projects
 		},
-		filteredProjects() {
-			return this.$store.state.projects.filter(project => project.tags.includes(this.currentTag.id))
-		}
 	},
 	methods: {
-
 	}
 }
 </script>
-
-<style></style>

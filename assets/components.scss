@@ -34,18 +34,35 @@
 	}
 }
 
-// .single-project .group h3::before {
-//   content: "";
-//   bottom: -1px;
-//   left: 0;
-//   position: absolute;
-//   height: 1px;
-//   width: 100%;
-//   background: currentColor;
-//   opacity: 0;
-//   transition: .2s ease;
-// }
+.title-text-block {
+	grid-template-areas: ". . title title text text text .";
+	@apply grid grid-cols-8 my-16;
+	.title-col {
+		grid-area: title;
+		h3 {
+			@apply text-xl font-medium;
+		}
+	}
+	.text-col {
+		grid-area: text;
+		@apply text-gray;
+	}
+}
 
-// .single-project .group:hover h3::before {
-//   opacity: 1;
-// }
+.divider-block {
+	grid-template-areas: ". divider divider divider divider divider divider .";
+	@apply grid grid-cols-8 my-16;
+	.divider-inner {
+		grid-area: divider;
+		border-bottom: 1px solid #E0E0E0;
+	}
+}
+
+.image-50-block {
+	@apply grid grid-cols-2 gap-6;
+	.col {
+		img {
+			@apply rounded-lg;
+		}
+	}
+}

@@ -24,7 +24,7 @@
 					<div
 						class="rounded-lg overflow-hidden project-cover relative pt-[60%]"
 					>
-						<nuxt-link :to="`/project/${project.slug}`">
+						<nuxt-link :to="`/projects/${project.slug}`">
 							<img
 								v-if="project._embedded['wp:featuredmedia']"
 								:src="project._embedded['wp:featuredmedia'][0].source_url"
@@ -45,7 +45,7 @@
 								<nuxt-link
 									
 									v-for="tag in project._embedded['wp:term'][1]" :key="tag.id"
-									:to="`/tag/${tag.slug}`"
+									:to="`/tags/${tag.slug}`"
 									class="tag !px-3 !py-2 text-sm border-gray-light bg-gray-light bg-opacity-80 hover:bg-opacity-100 hover:border-gray-dark hover:bg-gray-dark"
 								> {{ tag.name }}
 								</nuxt-link>

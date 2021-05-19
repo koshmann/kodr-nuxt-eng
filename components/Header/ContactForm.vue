@@ -1,107 +1,245 @@
 <template>
 	<div class="contact-form px-3 py-6 rounded-2xl bg-gray-light">
-		<div
-			class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b"
+		<form
+			ref="contactForm"
+			action="https://dev.kodr.agency/wp-json/contact-form-7/v1/contact-forms/5/feedback"
+			method="post"
+			@submit.prevent="formSubmissionHandler"
 		>
-			<h3 class="text-gray-dark text-2xl font-medium">Расскажите о Вашем проекте</h3>
-		</div>
-		<div class="grid grid-cols-2 gap-6">
-			<div class="flex flex-col">
-				<label for="contact-name">
-					<p class="text-sm text-gray mb-2">
-						Ваше имя<span class="text-red">*</span>
-					</p>
-					<input
-						id="contact-name"
-						class="block w-full py-3 px-4 mb-6 rounded-lg bg-transparent border-2 border-gray outline-none focus:border-red"
-						type="text"
-					>
-				</label>
-				<div class="grid grid-cols-2 gap-6">
-					<label for="contact-phone">
+			<div
+				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b"
+			>
+				<h3 class="text-gray-dark text-2xl font-medium">
+					Расскажите о Вашем проекте
+				</h3>
+			</div>
+			<div class="grid grid-cols-2 gap-6">
+				<div class="flex flex-col">
+					<label for="contact-name">
 						<p class="text-sm text-gray mb-2">
-							Ваш телефон<span class="text-red">*</span>
+							Ваше имя<span class="text-red">*</span>
 						</p>
 						<input
-							id="contact-phone"
-							class="block w-full py-3 px-4 mb-6 bg-transparent rounded-lg border-2 border-gray outline-none focus:border-red"
-							type="tel"
+							id="contact-name"
+							name="contact-name"
+							class="block w-full py-3 px-4 mb-6 rounded-lg bg-transparent border-2 border-gray outline-none focus:border-red"
+							type="text"
+							required
 						>
 					</label>
-					<label for="contact-email">
-						<p class="text-sm text-gray mb-2">
-							Ваш email<span class="text-red">*</span>
-						</p>
-						<input
-							id="contact-email"
-							class="block w-full py-3 px-4 mb-6 bg-transparent rounded-lg border-2 border-gray outline-none focus:border-red"
-							type="email"
-						>
-					</label>
+					<div class="grid grid-cols-2 gap-6">
+						<div class="">
+							<label for="contact-phone">
+								<p class="text-sm text-gray mb-2">
+									Ваш телефон<span class="text-red">*</span>
+								</p>
+							</label>
+							<vue-tel-input 
+								v-model="phone" 
+								:input-options="inputOptions"
+								:style-classes="styleClasses"
+								:dropdown-options="dropdownOptions"
+								mode="international"
+							/>
+						</div>
+						
+						<label for="contact-email">
+							<p class="text-sm text-gray mb-2">
+								Ваш email<span class="text-red">*</span>
+							</p>
+							<input
+								id="contact-email"
+								name="contact-email"
+								class="block w-full py-3 px-4 mb-6 bg-transparent rounded-lg border-2 border-gray outline-none focus:!border-red"
+								type="email"
+								required
+							>
+						</label>
+					</div>
+					<div class="block">
+						<label class="text-sm text-gray mb-2">
+							<p class="mb-2">Укажите тип Вашего проекта</p>
+						</label>
+						<fieldset class="flex">
+							<label
+								for="contact-branding"
+								:class="{
+									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Брендинг'),
+								}"
+								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95"
+							>
+								<p class="text-sm">
+									Брендинг
+								</p>
+								<input
+									id="contact-branding"
+									v-model="selected"
+									value="Брендинг"
+									name="contact-branding"
+									class="hidden w-full py-3 px-4 mb-6 rounded-lg border-2 border-gray outline-none focus:border-red"
+									type="checkbox"
+								>
+							</label>
+							<label
+								for="contact-web-dev"
+								:class="{
+									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Разработка сайта'),
+								}"
+								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95"
+							>
+								<p class="text-sm">
+									Разработка сайта
+								</p>
+								<input
+									id="contact-web-dev"
+									v-model="selected"
+									value="Разработка сайта"
+									name="contact-web-dev"
+									class="hidden w-full py-3 px-4 mb-6 rounded-lg border-2 border-gray outline-none focus:border-red"
+									type="checkbox"
+								>
+							</label>
+							<label
+								for="contact-promo"
+								:class="{
+									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Продвижение'),
+								}"
+								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95"
+							>
+								<p class="text-sm">
+									Продвижение
+								</p>
+								<input
+									id="contact-promo"
+									v-model="selected"
+									value="Продвижение"
+									name="contact-promo"
+									class="hidden w-full py-3 px-4 mb-6 rounded-lg border-2 border-gray outline-none focus:border-red"
+									type="checkbox"
+								>
+							</label>
+						</fieldset>
+					</div>
 				</div>
-				<div class="flex items-start">
-					<div v-for="(service, idx) in services" :key="idx">
-						<header-checkbox-button
-							:id="service.id"
-							:title="service.title"
-							:value="service.value"
-						/>
+				<div class="flex flex-col justify-between">
+					<label for="contact-message flex-grow-1 h-full flex flex-col">
+						<p class="text-sm text-gray mb-2">Ваше сообщение<span class="text-red">*</span></p>
+					</label>
+					<textarea
+						id="contact-message"
+						name="contact-message"
+						class="block w-full h-full py-3 px-4 mb-5 bg-transparent rounded-lg border-2 border-gray outline-none focus:border-red"
+						placeholder="Опишите, задачу"
+						required
+					/>
+					<div class="grid grid-cols-2 gap-6">
+						<label for="contact-accept-policy" class="flex items-center">
+							<input
+								id="contact-accept-policy"
+								type="checkbox"
+								name="accept-policy"
+								class="mr-4"
+								required
+							>
+							<p class="text-sm text-gray">
+								Нажимая кнопку, Вы даёте согласие на обработку персональных
+								данных
+							</p>
+						</label>
+						<button
+							type="submit"
+							class="btn place-self-end outline-none select-none border-red hover:bg-red hover:text-gray-light disabled:opacity-75 disabled:cursor-wait"
+							:disabled="cfSubmitting"
+						>
+							<span>Отправить</span>
+						</button>
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-col justify-between">
-				<label for="contact-message flex-grow-1 h-full flex flex-col">
-					<p class="text-sm text-gray mb-2">Ваше сообщение</p>
-				</label>
-				<textarea
-					id="contact-message"
-					class="block w-full h-full py-3 px-4 mb-5 bg-transparent rounded-lg border-2 border-gray outline-none focus:border-red"
-					placeholder="Оставьте сообщение (необзязательно)"
-				/>
-				<div class="grid grid-cols-2 gap-6">
-					<label for="contact-accept-policy" class="flex items-center">
-						<input
-							id="contact-accept-policy"
-							type="checkbox"
-							name="accept-policy"
-							class="mr-4"
-						>
-						<p class="text-sm text-gray">
-							Нажимая кнопку, Вы даёте согласие на обработку персональных данных
-						</p>
-					</label>
-					<a
-						class="btn place-self-end select-none border-red hover:bg-red hover:text-gray-light"
-					>
-						<span>Отправить</span>
-					</a>
-				</div>
+		</form>
+		
+		<transition name="bounce">
+			<div v-if="cfSubmitting" class="mt-6 bg-gray-dark rounded-2xl"> 
+				<loading />
 			</div>
-		</div>
+		</transition>
 	</div>
 </template>
 <script>
+import Loading from '../Loading.vue';
 export default {
+	components: { Loading },
 	data() {
 		return {
-			services: [
-				{
-					title: 'Брендинг',
-					value: 'branding',
-					id: 'contact-branding',
-				},
-				{
-					title: 'Разработка сайта',
-					value: 'web-dev',
-					id: 'contact-web-dev',
-				},
-				{
-					title: 'Продвижение',
-					value: 'promo',
-					id: 'contact-promo',
-				},
-			],
+			selected: [],
+			phone:"",
+			styleClasses: "mb-6 !shadow-none !rounded-lg !border-2 !border-gray",
+			inputOptions: {
+				id:"contact-phone",
+				name:"contact-phone",
+				placeholder: "",
+				styleClasses: "block w-full py-3 px-4 bg-transparent rounded-lg border-2 border-gray outline-none focus:!border-red"
+			},
+			dropdownOptions: {
+				showDialCodeInSelection: true,
+				tabindex: 5,
+				showFlags: true
+			},
+			cfResponseMessage: "",
+			cfSubmitting: false,
 		}
+	},
+	methods: {
+		formSubmissionHandler(event) {
+			this.cfSubmitting = true;
+			const formElement = event.target,
+				{ action, method } = formElement,
+				body = new FormData(formElement);
+
+			fetch(action, {
+				method,
+				body,
+			})
+				.then((response) => response.json())
+				.then((response) => {
+					// Determine if the submission is not valid
+					if ( response.status !== 'mail_sent' ) {
+						console.log('form submission failed ' + response.status)
+						this.cfSubmitting = false;
+					}
+					this.cfResponseMessage = response.message;
+					console.log(this.cfResponseMessage)
+					this.clearSelectedServices();
+					formElement.reset();
+					if ( response.status === 'mail_sent' ) {
+						console.log('form submission success ' + response.status)
+						this.cfSubmitting = false;
+						this.$router.push('/thank-you')
+					}
+
+				})
+				.catch((error) => {
+					console.log('problem with request ' + error)
+					this.cfSubmitting = false;
+				})
+		},
+		clearSelectedServices() {
+			this.selected = []
+		},
+		isChecked(value) {
+			return this.selected.includes(value)
+		},
+
 	},
 }
 </script>
+
+<style scoped>
+	.vue-tel-input:focus-within {
+		box-shadow: none;
+		border-color: #FF3300 !important;
+	}
+	.vti__dropdown {
+		border-radius: 8px;
+	}
+</style>

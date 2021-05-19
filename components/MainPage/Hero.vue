@@ -26,16 +26,18 @@
 			</div>
 
 			<div class="flex-1" width="750" height="750">
-				<!-- <video
+				<video
 					id="herovideo"
 					width="750"
 					height="750"
-					muted=""
-					playsinline=""
-					autoplay=""
+					muted
+					playsinline
+					autoplay
+					loop
+					preload
 				>
 					<source src="~/assets/cover.mp4" type="video/mp4">
-				</video> -->
+				</video>
 			</div>
 		</div>
 	</section>

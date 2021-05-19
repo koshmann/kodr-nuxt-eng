@@ -85,11 +85,11 @@
 				</div>
 
 				<div class="header-button text-right z-10 select-none">
-					<a 
+					<nuxt-link 
+						to="/contacts"
 						class="btn border-red hover:bg-red hover:text-gray-light"
-						@click="formOpen = !formOpen"
 					>
-						<span>Get in touch</span>
+						<span>Заявка</span>
 						<svg
 							class="hidden"
 							width="19"
@@ -102,7 +102,7 @@
 								d="M17.97 1.015L1 17.985M17.97 17.985L1 1.015"
 							/>
 						</svg>
-					</a>
+					</nuxt-link>
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 <template>
 	<div id="main" class="bg-gray-dark mx-3">
-		<section class="px-3 pt-52 pb-36 bg-gray-light rounded-2xl">
+		<section class="px-3 pt-36 pb-36 bg-gray-light rounded-2xl">
 			<div
 				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b"
 			>
