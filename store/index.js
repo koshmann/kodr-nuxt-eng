@@ -20,7 +20,7 @@ export const mutations = {
 
 export const actions = {
 	async getProjects({ state, commit }) {
-		//if (state.projects.length) return
+		if (state.projects.length) return
 		try {
 			let projects = await fetch(`https://dev.kodr.agency/wp-json/wp/v2/projects?page=1&per_page=12&_embed=wp:featuredmedia,wp:term`
 			).then(res => res.json())
@@ -32,7 +32,7 @@ export const actions = {
 		}
 	},
 	async getTags({ state, commit }) {
-		//if (state.tags.length) return
+		if (state.tags.length) return
 		try {
 			let tags = await fetch(`https://dev.kodr.agency/wp-json/wp/v2/tags`
 			).then(res => res.json())

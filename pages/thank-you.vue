@@ -25,7 +25,7 @@
 									:src="project._embedded['wp:featuredmedia'][0].source_url"
 									class="absolute top-0 left-0 h-full object-cover w-full transition duration-500 ease-in-out group-hover:transform group-hover:scale-110"
 									alt=""
-								/>
+								>
 								<div class="absolute top-4 left-4">
 									<h3 class="font-title font-medium text-xl mb-2">
 										{{ project.title.rendered }}

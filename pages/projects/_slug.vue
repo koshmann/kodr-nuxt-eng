@@ -26,7 +26,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="content" v-html="project.content.rendered"></div>
+				<div class="content" v-html="project.content.rendered" />
 			</section>
 		</transition>
 	</main>
