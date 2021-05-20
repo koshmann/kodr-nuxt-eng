@@ -1,16 +1,16 @@
 <template>
 	<div id="main" class="bg-gray-dark mx-3">
-		<section class="px-3 pt-36 pb-36 bg-gray-light rounded-2xl">
+		<section class="px-3 py-36 bg-gray-light rounded-2xl sm:py-6">
 			<div
-				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b"
+				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:mb-8"
 			>
-				<h2 class="text-gray-dark text-4xl font-medium">Контакты</h2>
-				<div class="text-gray text-right">
+				<h2 class="text-gray-dark text-4xl font-medium sm:text-2xl">Контакты</h2>
+				<div class="text-gray text-right sm:hidden">
 					<p>Будем рады познакомиться!</p>
 				</div>
 			</div>
-			<div class="grid grid-cols-2">
-				<div class="grid grid-cols-2">
+			<div class="grid grid-cols-2 sm:block">
+				<div class="grid grid-cols-2 sm:mb-8 sm:gap-4">
 					<div>
 						<p class="text-sm text-gray mb-2">Телефон</p>
 						<a
@@ -32,7 +32,7 @@
 				</div>
 				<div class="">
 					<p class="text-sm text-gray mb-2">Медиа</p>
-					<div class="grid grid-cols-4">
+					<div class="grid grid-cols-4 sm:grid-cols-2 sm:gap-4">
 						<div>
 							<a
 								href="#"

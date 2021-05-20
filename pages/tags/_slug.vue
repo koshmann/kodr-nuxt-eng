@@ -8,12 +8,12 @@
 			<div
 				class="flex justify-between items-center pb-3 mb-6 border-gray-medium border-b"
 			>
-				<h2 class="text-3xl font-title font-medium text-gray max-w-xs leading-7">
+				<h2 class="text-3xl font-title font-medium text-gray-dark max-w-xs leading-7 sm:text-2xl sm:leading-5">
 					{{ currentTag.name }}
 				</h2>
 				<nuxt-link
 					to="/projects"
-					class="btn text-gray border-gray-medium hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
+					class="btn text-gray border-gray-medium hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light sm:!hidden"
 				>
 					<span class="mr-4">Все проекты</span>
 					<svg width="4" height="7" viewBox="0 0 4 7" fill="none">
@@ -22,7 +22,7 @@
 				</nuxt-link>
 			</div>
 
-			<div class="grid grid-cols-2 gap-6">
+			<div class="grid grid-cols-2 gap-6 sm:grid-cols-1">
 				<div
 					v-for="project in filteredProjects"
 					:key="project.id"

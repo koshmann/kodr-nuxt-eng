@@ -21,8 +21,8 @@
 			</nuxt-link>
 		</div>
 
-		<div class="grid grid-cols-2">
-			<div class="grid grid-cols-2">
+		<div class="grid grid-cols-2 sm:grid-cols-1">
+			<div class="grid grid-cols-2 sm:grid-cols-1">
 				<div>
 					<h3 class="text-lg mb-4">
 						Будем рады с Вами работать!
@@ -30,7 +30,7 @@
 					<p class="text-gray mb-8">
 						Мы постараемся, чтоб Ваш проект стал лучшим в нашем портфолио.
 					</p>
-					<a class="btn border-red text-gray-light hover:text-white hover:bg-red ">
+					<nuxt-link to="/contacts" class="btn border-red text-gray-light hover:text-white hover:bg-red ">
 						<span>Заказать проект</span>
 						<svg
 							class="hidden"
@@ -44,16 +44,16 @@
 								d="M17.97 1.015L1 17.985M17.97 17.985L1 1.015"
 							/>
 						</svg>
-					</a>
+					</nuxt-link>
 				</div>
 				<div />
 			</div>
-			<div class="text-gray">
+			<div class="text-gray sm:mt-12">
 				<h3 class="text-lg mb-4 text-gray-light">
 					Для связи
 				</h3>
 
-				<div class="grid grid-cols-4 gap-6 text-gray">
+				<div class="grid grid-cols-4 gap-6 text-gray sm:grid-cols-2">
 					<a
 						href="#"
 						class="flex items-center hover:text-gray-light transition-colors duration-200"

@@ -3,17 +3,17 @@
 		<transition name="bounce">
 			<loading v-if="$fetchState.pending" />
 			<section v-else-if="$fetchState.error">An error occurred :(</section>
-			<section v-else-if="!$fetchState.pending && !$fetchState.error" class="px-3 mx-3 pt-16 pb-16 bg-gray-light rounded-2xl">
+			<section v-else-if="!$fetchState.pending && !$fetchState.error" class="px-3 mx-3 py-16 bg-gray-light rounded-2xl sm:py-4">
 				<div
-					class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b"
+					class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:grid-cols-1 sm:mb-4"
 				>
-					<h2 class="text-gray-dark text-4xl font-medium">
+					<h2 class="text-gray-dark text-4xl font-medium sm:text-2xl">
 						{{ project.title.rendered }}
 					</h2>
 					<div class="relative text-gray text-right">
 						<div
 							v-if="project._embedded['wp:term']"
-							class="flex justify-end text-gray-dark"
+							class="flex justify-end text-gray-dark sm:justify-start sm:mt-3"
 						>
 							<nuxt-link
 								v-for="tag in project._embedded['wp:term'][1]"

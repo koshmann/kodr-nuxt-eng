@@ -1,7 +1,7 @@
 <template>
 	<div
 		id="logo"
-		class="text-center logo"
+		class="logo"
 	>
 		<nuxt-link
 			to="/"

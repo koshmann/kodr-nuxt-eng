@@ -48,6 +48,14 @@
 		@apply text-gray;
 	}
 }
+@media (max-width: 767px) {
+	.title-text-block {
+		@apply block my-8;
+		.title-col {
+			@apply mb-4;
+		}
+	}
+}
 
 .divider-block {
 	grid-template-areas: ". divider divider divider divider divider divider .";
@@ -57,6 +65,11 @@
 		border-bottom: 1px solid #E0E0E0;
 	}
 }
+@media (max-width: 767px) {
+	.divider-block {
+		@apply block my-8;
+	}
+}
 
 .image-50-block {
 	@apply grid grid-cols-2 gap-6;
@@ -64,5 +77,10 @@
 		img {
 			@apply rounded-lg;
 		}
+	}
+}
+@media (max-width: 767px) {
+	.image-50-block {
+		@apply block;
 	}
 }

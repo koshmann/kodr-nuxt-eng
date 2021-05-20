@@ -6,7 +6,7 @@
 	>
 		<div id="masthead" class="overflow-hidden relative">
 			<div
-				class="relative overflow-hidden bg-gray-light grid grid-cols-3 justify-between items-center p-3 m-3 mb-2 rounded-2xl z-10 transition-colors duration-300"
+				class="relative overflow-hidden bg-gray-light grid grid-cols-3 justify-between items-center p-3 m-3 mb-2 rounded-2xl z-10 transition-colors duration-300 sm:grid-cols-2"
 				:class="{ '!bg-white !rounded-b-2xl !border-b-0': stuck }"
 			>
 				<div 
@@ -17,7 +17,7 @@
 					class="absolute w-full h-full top-0 left-0 bg-white rounded-lg opacity-0 transform -translate-x-full transition duration-200 ease-in-out"
 					:class="{ 'opacity-100 !translate-x-0': menuActive && !stuck }"
 				/>
-				<div class="hidden lg:flex flex-row items-center z-10">
+				<div class="flex flex-row items-center z-10 sm:hidden">
 					<div class="menu-btn mr-4 select-none">
 						<a
 							class="btn border-gray-medium hover:bg-gray-dark hover:border-gray-dark hover:text-gray-light"
@@ -39,16 +39,6 @@
 							<span class="">Меню</span>
 						</a>
 					</div>
-					<div class="lg:hidden">
-						<a class="mobile-burger">
-							<svg width="17" height="17" viewBox="0 0 24 15" fill="none">
-								<path d="M24 0.5H0" stroke="#333333" />
-								<path d="M24 7.5H0" stroke="#333333" />
-								<path d="M24 7.5H0" stroke="#333333" />
-								<path d="M24 14.5H0" stroke="#333333" />
-							</svg>
-						</a>
-					</div>
 					<nav class="flex flex-row select-none">
 						<nuxt-link
 							to="/contacts"
@@ -68,23 +58,14 @@
 						>
 							Контакты
 						</nuxt-link>
-						<nuxt-link
-							to="/contacts"
-							class="menu-link mr-4 delay-150"
-							:class="{
-								'transform translate-y-4 rotate-6 origin-left opacity-0 transition-all duration-200 delay-75': !menuActive,
-							}"
-						>
-							Контакты
-						</nuxt-link>
 					</nav>
 				</div>
 
-				<div class="text-center z-10">
+				<div class="text-center z-10 sm:!text-left">
 					<header-logo />
 				</div>
 
-				<div class="header-button text-right z-10 select-none">
+				<div class="header-button text-right z-10 select-none sm:hidden">
 					<nuxt-link 
 						to="/contacts"
 						class="btn border-red hover:bg-red hover:text-gray-light"
@@ -103,6 +84,17 @@
 							/>
 						</svg>
 					</nuxt-link>
+				</div>
+				<div class="hidden text-right sm:block">
+					<button class="mobile-burger btn !outline-none border-gray-medium transition duration-200 ease-in-out hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light">
+						<svg width="17" height="17" viewBox="0 0 24 15" fill="none" class="mr-2">
+							<path d="M24 0.5H0" stroke="currentColor" />
+							<path d="M24 7.5H0" stroke="currentColor" />
+							<path d="M24 7.5H0" stroke="currentColor" />
+							<path d="M24 14.5H0" stroke="currentColor" />
+						</svg>
+						<span>Меню</span>
+					</button>
 				</div>
 			</div>
 		</div>

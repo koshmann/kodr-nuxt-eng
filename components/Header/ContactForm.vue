@@ -7,13 +7,13 @@
 			@submit.prevent="formSubmissionHandler"
 		>
 			<div
-				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b"
+				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:block sm:mb-8"
 			>
 				<h3 class="text-gray-dark text-2xl font-medium">
 					Расскажите о Вашем проекте
 				</h3>
 			</div>
-			<div class="grid grid-cols-2 gap-6">
+			<div class="grid grid-cols-2 gap-6 sm:block">
 				<div class="flex flex-col">
 					<label for="contact-name">
 						<p class="text-sm text-gray mb-2">
@@ -27,7 +27,7 @@
 							required
 						>
 					</label>
-					<div class="grid grid-cols-2 gap-6">
+					<div class="grid grid-cols-2 gap-6 sm:block">
 						<div class="">
 							<label for="contact-phone">
 								<p class="text-sm text-gray mb-2">
@@ -56,17 +56,17 @@
 							>
 						</label>
 					</div>
-					<div class="block">
+					<div class="block sm:mb-4">
 						<label class="text-sm text-gray mb-2">
 							<p class="mb-2">Укажите тип Вашего проекта</p>
 						</label>
-						<fieldset class="flex">
+						<fieldset class="flex flex-wrap">
 							<label
 								for="contact-branding"
 								:class="{
 									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Брендинг'),
 								}"
-								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95"
+								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
 								<p class="text-sm">
 									Брендинг
@@ -85,7 +85,7 @@
 								:class="{
 									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Разработка сайта'),
 								}"
-								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95"
+								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
 								<p class="text-sm">
 									Разработка сайта
@@ -104,7 +104,7 @@
 								:class="{
 									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Продвижение'),
 								}"
-								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95"
+								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
 								<p class="text-sm">
 									Продвижение
@@ -132,8 +132,8 @@
 						placeholder="Опишите, задачу"
 						required
 					/>
-					<div class="grid grid-cols-2 gap-6">
-						<label for="contact-accept-policy" class="flex items-center">
+					<div class="grid grid-cols-2 gap-6 sm:block">
+						<label for="contact-accept-policy" class="flex items-center sm:mb-6">
 							<input
 								id="contact-accept-policy"
 								type="checkbox"
