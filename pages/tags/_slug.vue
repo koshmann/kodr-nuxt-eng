@@ -72,7 +72,9 @@
 </template>
 
 <script>
+import Loading from '~/components/Loading.vue';
 export default {
+	components: { Loading },
 	data() {
 		return {
 			slug: this.$route.params.slug,

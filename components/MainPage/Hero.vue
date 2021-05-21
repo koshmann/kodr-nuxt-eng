@@ -34,13 +34,13 @@
 				:class="{'title-to-opacity':showreelShown}"
 			>
 				<div class="flex-1">
-					<h1 class="text-5xl font-title font-medium sm:text-2xl">
+					<h1 class="text-5xl font-title font-medium sm:text-3xl sm:leading-7">
 						Создаём сайты, <span class="text-gray">которые раскрывают потенциал Вашего бизнеса.</span>
 					</h1>
-					<p class="pt-2 pb-8 text-gray">
+					<p class="pt-4 pb-8 text-gray">
 						Дизайн. Интерфейсы. 3D графика. Диджитал.
 					</p>
-					<a class="btn border-red hover:text-white hover:bg-red">
+					<nuxt-link to="/contacts" class="btn border-red hover:text-white hover:bg-red">
 						<span>Заказать проект</span>
 						<svg
 							class="hidden"
@@ -54,7 +54,7 @@
 								d="M17.97 1.015L1 17.985M17.97 17.985L1 1.015"
 							/>
 						</svg>
-					</a>
+					</nuxt-link>
 				</div>
 			</div>
 		</div>

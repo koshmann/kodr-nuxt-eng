@@ -22,7 +22,7 @@
 			<div v-for="project in projects" :key="project.id" class="card single-project">
 				<div class="group">
 					<div
-						class="rounded-lg overflow-hidden project-cover relative pt-[60%]"
+						class="rounded-lg overflow-hidden project-cover relative pt-[60%] sm:pt-[100%]"
 					>
 						<nuxt-link :to="`/projects/${project.slug}`">
 							<img
@@ -46,7 +46,7 @@
 									
 									v-for="tag in project._embedded['wp:term'][1]" :key="tag.id"
 									:to="`/tags/${tag.slug}`"
-									class="tag !px-3 !py-2 text-sm border-gray-light bg-gray-light bg-opacity-80 hover:bg-opacity-100 hover:!text-gray-dark hover:border-white hover:bg-white"
+									class="tag !px-3 !py-2 text-sm !border-0 bg-gray-light bg-opacity-80 hover:bg-opacity-100 hover:!text-gray-dark hover:border-white hover:bg-white"
 								> {{ tag.name }}
 								</nuxt-link>
 							</div>

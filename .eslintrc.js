@@ -26,11 +26,11 @@ module.exports = {
 			'error',
 			{
 				singleline: {
-					max: 5,
+					max: 7,
 					allowFirstLine: true,
 				},
 				multiline: {
-					max: 5,
+					max: 7,
 					allowFirstLine: true,
 				},
 			},

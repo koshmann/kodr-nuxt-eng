@@ -7,6 +7,22 @@
 				<footer-contact-footer v-if="$nuxt.$route.name === 'contacts'" />
 				<the-footer v-else />
 			</transition>
+			<overlay v-show="isOverlay" />
 		</div>
 	</body>
 </template>
+<script>
+export default {
+	data() {
+		return {
+			
+		}
+	},
+	computed: {
+		isOverlay() {
+			return this.$store.state.overlay;
+		} 
+	},
+	
+}
+</script>

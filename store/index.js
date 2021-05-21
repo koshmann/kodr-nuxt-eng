@@ -1,6 +1,8 @@
 export const state = () => ({
 	projects: [],
-	tags: []
+	tags: [],
+	overlay: false,
+	mobileMenu: false
 })
 
 export const getters = {
@@ -15,6 +17,12 @@ export const mutations = {
 	},
 	updateTags: (state, tags) => {
 		state.tags = tags
+	},
+	toggleOverlay: (state, val) => {
+		state.overlay = val
+	},
+	toggleMobileMenu: (state, val) => {
+		state.mobileMenu = val
 	}
 }
 
@@ -49,4 +57,10 @@ export const actions = {
 			console.log(err)
 		}
 	},
+	setOverlay({commit}, val) {
+		commit("toggleOverlay", val)
+	},
+	setMobileMenu({commit}, val) {
+		commit("toggleMobileMenu", val)
+	}
 }

@@ -70,6 +70,11 @@ export default {
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
 		transpile: ['gsap', 'gsap/Draggable'],
+		babel:{
+			plugins: [
+				['@babel/plugin-proposal-private-methods', { loose: true }]
+			]
+		}
 	},
 	layoutTransition: 'bounce',
 	generate: {

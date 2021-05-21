@@ -1,8 +1,8 @@
 <template>
 	<header
 		id="header"
-		class="w-full sticky top-0 z-10"
-		:class="{ stuck: stuck }"
+		class="w-full sticky top-0 z-20"
+		:class="{ 'stuck': stuck }"
 	>
 		<div id="masthead" class="overflow-hidden relative">
 			<div
@@ -86,39 +86,41 @@
 					</nuxt-link>
 				</div>
 				<div class="hidden text-right sm:block">
-					<button class="mobile-burger btn !outline-none border-gray-medium transition duration-200 ease-in-out hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light">
-						<svg width="17" height="17" viewBox="0 0 24 15" fill="none" class="mr-2">
-							<path d="M24 0.5H0" stroke="currentColor" />
-							<path d="M24 7.5H0" stroke="currentColor" />
-							<path d="M24 7.5H0" stroke="currentColor" />
-							<path d="M24 14.5H0" stroke="currentColor" />
+					<button 
+						class="mobile-burger btn !py-4 !px-4 !outline-none border-gray-medium transition duration-200 ease-in-out hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
+						@click="showBurgerMenu"
+					>
+						<svg width="21" height="15" viewBox="0 0 21 15" fill="none">
+							<path d="M20.5 0.5H0.5" stroke="currentColor" />
+							<path d="M20.5 14.5H0.5" stroke="currentColor" />
+							<path d="M20.5 7.5H0.5" stroke="currentColor" />
 						</svg>
-						<span>Меню</span>
 					</button>
 				</div>
 			</div>
 		</div>
-		<div class="hidden cc-mobile-menu z-10">
-			<div class="menu-glavnoe-menyu-container">
-				<ul id="menu-glavnoe-menyu-1" class="menu">
-					<li
-						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"
-					>
-						<a href="https://kodr.agency/portfolio/">Проекты</a>
-					</li>
-					<li
-						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"
-					>
-						<a href="https://kodr.agency/competence/">Направления</a>
-					</li>
-					<li
-						class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216"
-					>
-						<a href="https://kodr.agency/contacts/">Контакты</a>
-					</li>
-				</ul>
+		<transition name="mobile-menu">
+			<div v-show="mobileMenu" class="cc-mobile-menu absolute z-20 mx-3 p-3 pt-6 bg-gray-light text-gray-dark rounded-2xl">
+				<p class="font-title font-medium from-gray-dark text-xl mb-4">Меню</p>
+				<nav class="text-gray">
+					<ul>
+						<li class="my-2">
+							<nuxt-link to="/projects">
+								Проекты
+							</nuxt-link>
+						</li>
+						<li class="my-2">
+							<nuxt-link to="/contacts">
+								Контакты
+							</nuxt-link>
+						</li>
+					</ul>
+				</nav>
+				<button class="btn !block mt-8 w-full bg-red border-red text-white !outline-none">
+					Заказать проект
+				</button>
 			</div>
-		</div>
+		</transition>
 	</header>
 </template>
 
@@ -128,6 +130,14 @@ export default {
 		return {
 			menuActive: false,
 			stuck: false,
+		}
+	},
+	computed: {
+		overlay() {
+			return this.$store.state.overlay;
+		},
+		mobileMenu() {
+			return this.$store.state.mobileMenu;
 		}
 	},
 	mounted() {
@@ -142,6 +152,22 @@ export default {
 				this.stuck = false
 			}
 		},
+		toggleOverlay(bool) {
+			this.$store.dispatch('setOverlay', bool)
+		},
+		toggleBurgerMenu(bool) {
+			this.$store.dispatch('setMobileMenu', bool)	
+		},
+		showBurgerMenu() {
+			if (!this.mobileMenu) {
+				this.toggleOverlay(true);
+				this.toggleBurgerMenu(true);
+			}
+			else if (this.mobileMenu) {
+				this.toggleOverlay(false);
+				this.toggleBurgerMenu(false);
+			}
+		}
 	},
 }
 </script>
@@ -207,4 +233,40 @@ svg.burger {
 		}
 	}
 }
+
+.cc-mobile-menu {
+	width: calc(100% - 1.5rem);
+	z-index: 5;
+}
+
+
+.mobile-menu-enter-active {
+	animation: mobile-menu-in 0.5s ease;
+	transform-origin: top right;
+}
+.mobile-menu-leave-active {
+	animation: mobile-menu-out 0.5s ease;
+	transform-origin: top right;
+}
+@keyframes mobile-menu-in {
+	0% {
+		transform: translateY(-25%) scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}
+@keyframes mobile-menu-out {
+	0% {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-25%) scale(0);
+	}
+}
+
 </style>

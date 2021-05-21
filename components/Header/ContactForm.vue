@@ -234,12 +234,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 	.vue-tel-input:focus-within {
 		box-shadow: none;
 		border-color: #FF3300 !important;
 	}
 	.vti__dropdown {
 		border-radius: 8px;
+	}
+	.vti__dropdown-list {
+		width: 320px;
+		border-radius: 8px;
+		box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+	}
+	.vti__dropdown-list .vti__dropdown-item strong {
+		font-weight: normal;
 	}
 </style>
