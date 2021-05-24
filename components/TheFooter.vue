@@ -1,6 +1,6 @@
 <template>
 	<footer class="px-3 bg-gray-dark text-gray-light rounded-lg m-3 mt-3">
-		<div class="flex justify-between items-center py-3 mb-12 border-gray-darker border-b">
+		<div class="flex justify-between items-center py-6 mb-12 border-gray-darker border-b">
 			<footer-logo />
 			<nuxt-link
 				to="/contacts"
@@ -53,7 +53,7 @@
 					Для связи
 				</h3>
 
-				<div class="grid grid-cols-4 gap-6 text-gray sm:grid-cols-2">
+				<div class="grid grid-cols-4 gap-6 text-gray sm:grid-cols-2 sm:gap-4">
 					<a
 						href="#"
 						class="flex items-center hover:text-gray-light transition-colors duration-200"
@@ -128,16 +128,16 @@
 
 		<div class="mt-12 border-b border-gray-darker" />
 
-		<div class="grid grid-cols-2 py-3 text-gray text-sm">
+		<div class="grid grid-cols-2 py-6 text-gray text-sm">
 			<div>
 				<p>© KODR, 2021</p>
 			</div>
 
 			<div class="text-right">
-				<a
-					href="#"
+				<nuxt-link
+					to="/privacy-policy"
 					class="underline hover:text-gray-light transition-colors duration-200"
-				> Политика конфиденциальности</a>
+				> Политика конфиденциальности</nuxt-link>
 			</div>
 		</div>
 	</footer>

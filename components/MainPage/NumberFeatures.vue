@@ -2,7 +2,7 @@
 	<section class="px-3 py-6 bg-gray-light rounded-2xl">
 		<div class="grid grid-cols-4 gap-32 sm:grid-cols-1 sm:gap-8">
 			<div class="">
-				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem] sm:leading-6 sm:w-48">
+				<h3 class="text-xl text-gray mb-4 font-medium leading-5 max-w-[12rem] sm:leading-6 sm:w-48">
 					Более <span class="text-gray-dark">720 тыс. человек</span>
 				</h3>
 				<p class="text-gray text-sm">
@@ -11,7 +11,7 @@
 			</div>
 
 			<div class="">
-				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem] sm:leading-6 sm:w-48">
+				<h3 class="text-xl text-gray mb-4 font-medium leading-5 max-w-[12rem] sm:leading-6 sm:w-48">
 					Более <span class="text-gray-dark">64 млн. рублей</span>
 				</h3>
 				<p class="text-gray text-sm">
@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="">
-				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem] sm:leading-6 sm:w-48">
+				<h3 class="text-xl text-gray mb-4 font-medium leading-5 max-w-[12rem] sm:leading-6 sm:w-48">
 					Более <span class="text-gray-dark">12 отраслей бизнеза</span>
 				</h3>
 				<p class="text-gray text-sm">
@@ -29,7 +29,7 @@
 			</div>
 
 			<div class="">
-				<h3 class="text-xl text-gray mb-4 font-medium max-w-[12rem] sm:leading-6 sm:w-48">
+				<h3 class="text-xl text-gray mb-4 font-medium leading-5 max-w-[12rem] sm:leading-6 sm:w-48">
 					Более <span class="text-gray-dark">960 тыс. человек</span>
 				</h3>
 				<p class="text-gray text-sm">

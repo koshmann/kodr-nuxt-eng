@@ -32,9 +32,13 @@
 								alt=""
 							>
 							<div class="absolute top-4 left-4">
-								<h3 class="font-title font-medium text-xl mb-2"> {{ project.title.rendered }} </h3>
+								<h3 
+									class="font-title font-medium text-xl mb-2"
+									:class="{'text-gray-light': isLightText(project.acf.textcolor)}"
+								> {{ project.title.rendered }} </h3>
 								<div
-									class="text-sm text-gray opacity-0 max-w-xs group-hover:opacity-100 transition duration-500 delay-100"
+									class="text-sm text-gray opacity-0 max-w-xs group-hover:opacity-100 transition duration-500 delay-100 sm:opacity-100 sm:mr-24"
+									:class="{'text-gray-medium': isLightText(project.acf.textcolor)}"
 									v-html="project.excerpt.rendered"
 								/>
 							</div>
@@ -46,7 +50,7 @@
 									
 									v-for="tag in project._embedded['wp:term'][1]" :key="tag.id"
 									:to="`/tags/${tag.slug}`"
-									class="tag !px-3 !py-2 text-sm !border-0 bg-gray-light bg-opacity-80 hover:bg-opacity-100 hover:!text-gray-dark hover:border-white hover:bg-white"
+									class="tag !px-3 !py-2 text-xs !border-0 bg-gray-light bg-opacity-80 hover:bg-opacity-100 hover:!text-gray-dark hover:border-white hover:bg-white"
 								> {{ tag.name }}
 								</nuxt-link>
 							</div>
@@ -80,6 +84,11 @@ export default {
 			return this.$store.state.projects
 		},
 	},
+	methods: {
+		isLightText(textColor) {
+			return textColor === "Светлый"
+		}
+	}
 }
 </script>
 

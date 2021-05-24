@@ -1,6 +1,7 @@
 export const state = () => ({
 	projects: [],
 	tags: [],
+	pages: [],
 	overlay: false,
 	mobileMenu: false
 })
@@ -17,6 +18,9 @@ export const mutations = {
 	},
 	updateTags: (state, tags) => {
 		state.tags = tags
+	},
+	updatePages: (state, pages) => {
+		state.pages = pages
 	},
 	toggleOverlay: (state, val) => {
 		state.overlay = val
@@ -53,6 +57,18 @@ export const actions = {
 					slug
 				}))
 			commit("updateTags", tags)
+		} catch (err) {
+			console.log(err)
+		}
+	},
+	async getPages({ state, commit }) {
+		if (state.pages.length) return
+		try {
+			let pages = await fetch(`https://dev.kodr.agency/wp-json/wp/v2/pages`
+			).then(res => res.json())
+			pages = pages
+				.filter(el => el.status === "publish")
+			commit("updatePages", pages)
 		} catch (err) {
 			console.log(err)
 		}

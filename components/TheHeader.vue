@@ -41,7 +41,7 @@
 					</div>
 					<nav class="flex flex-row select-none">
 						<nuxt-link
-							to="/contacts"
+							to="/projects"
 							class="menu-link mr-4 delay-100"
 							:class="{
 								'transform translate-y-4 rotate-6 origin-left opacity-0 transition-all duration-200 delay-75': !menuActive,
@@ -116,9 +116,11 @@
 						</li>
 					</ul>
 				</nav>
-				<button class="btn !block mt-8 w-full bg-red border-red text-white !outline-none">
-					Заказать проект
-				</button>
+				<nuxt-link to="/contacts">
+					<button class="btn !block mt-8 w-full bg-red border-red text-white !outline-none">
+						Заказать проект
+					</button>
+				</nuxt-link>
 			</div>
 		</transition>
 	</header>
@@ -138,6 +140,12 @@ export default {
 		},
 		mobileMenu() {
 			return this.$store.state.mobileMenu;
+		}
+	},
+	watch: {
+		'$route' () {
+			this.toggleOverlay(false);
+			this.toggleBurgerMenu(false);
 		}
 	},
 	mounted() {
@@ -168,7 +176,7 @@ export default {
 				this.toggleBurgerMenu(false);
 			}
 		}
-	},
+	}
 }
 </script>
 
@@ -245,7 +253,7 @@ svg.burger {
 	transform-origin: top right;
 }
 .mobile-menu-leave-active {
-	animation: mobile-menu-out 0.5s ease;
+	animation: mobile-menu-out 0.25s ease;
 	transform-origin: top right;
 }
 @keyframes mobile-menu-in {

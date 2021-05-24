@@ -6,6 +6,13 @@ let dynamicProjectRoutes = () => {
 			return res.data.map((project) => `/project/${project.slug}`)
 		})
 }
+let dynamicPageRoutes = () => {
+	return axios
+		.get('https://dev.kodr.agency/wp-json/wp/v2/pages?_fields=slug')
+		.then((res) => {
+			return res.data.map((page) => `/${page.slug}`)
+		})
+}
 // let dynamicProjectTagRoutes = () => {
 // 	return axios
 // 		.get('https://dev.kodr.agency/wp-json/wp/v2/tags?_fields=slug')
@@ -20,14 +27,14 @@ export default {
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'kodr-nuxt',
+		title: 'KODR Agency',
 		htmlAttrs: {
-			lang: 'en',
+			lang: 'ru',
 		},
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: '' },
+			{ hid: 'description', name: 'description', content: 'Дизайн. Интерфейсы. 3D графика. Диджитал.' },
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 	},
@@ -77,7 +84,7 @@ export default {
 		}
 	},
 	layoutTransition: 'bounce',
-	generate: {
-		routes: dynamicProjectRoutes,
-	},
+	// generate: {
+	// 	routes: [dynamicProjectRoutes, dynamicPageRoutes],
+	// },
 }

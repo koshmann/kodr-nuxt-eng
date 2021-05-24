@@ -36,7 +36,7 @@
 
 .title-text-block {
 	grid-template-areas: ". . title title text text text .";
-	@apply grid grid-cols-8 my-16;
+	@apply grid grid-cols-8 gap-6 my-16;
 	.title-col {
 		grid-area: title;
 		h3 {
@@ -72,8 +72,10 @@
 }
 
 .image-50-block {
-	@apply grid grid-cols-2 gap-6;
+	grid-template-areas: ". . . . img img img img";
+	@apply grid grid-cols-8 gap-6;
 	.col {
+		grid-area: img;
 		img {
 			@apply rounded-lg;
 		}
@@ -82,5 +84,40 @@
 @media (max-width: 767px) {
 	.image-50-block {
 		@apply block;
+	}
+}
+.website-link-button {
+	@apply text-center mb-12 mt-8;
+	a {
+		@apply relative text-gray inline-flex items-center;
+		span {
+			@apply mr-2;
+		}
+		&:hover {
+			@apply text-gray-dark;
+		}
+		&::before {
+			content: '';
+			bottom: -1px;
+			left: 0;
+			position: absolute;
+			height: 1px;
+			width: 100%;
+			background: currentColor;
+		}
+	}
+}
+
+.wp-block-image {
+	img {
+		@apply w-full rounded-2xl;
+	}
+}
+
+.video-center-block {
+	grid-template-areas: ". . vid vid vid vid . .";
+	@apply grid grid-cols-8 gap-6;
+	.col {
+		grid-area: vid;
 	}
 }

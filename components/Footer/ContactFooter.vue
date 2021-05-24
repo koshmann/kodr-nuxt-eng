@@ -6,10 +6,10 @@
 			</div>
 
 			<div class="text-right">
-				<a
-					href="#"
+				<nuxt-link
+					to="/privacy-policy"
 					class="underline hover:text-gray-light transition-colors duration-200"
-				> Политика конфиденциальности</a>
+				> Политика конфиденциальности</nuxt-link>
 			</div>
 		</div>
 	</footer>

@@ -2,7 +2,10 @@
 	<main class="project individual">
 		<transition name="bounce">
 			<loading v-if="$fetchState.pending" />
-			<section v-else-if="$fetchState.error">An error occurred :(</section>
+			<section v-else-if="$fetchState.error || !project" class="mx-3 p-3 py-6 bg-gray-light rounded-2xl">
+				<h1 class="text-2xl font-medium mb-4">При загрузке произошла ошибка. Попробуйте перезагрузить страницу или вернуться на главную.</h1>
+				<NuxtLink class="btn bg-red text-white" to="/">На главную</NuxtLink>
+			</section>
 			<section v-else-if="!$fetchState.pending && !$fetchState.error" class="px-3 mx-3 py-16 bg-gray-light rounded-2xl sm:py-4">
 				<div
 					class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:grid-cols-1 sm:mb-4"
@@ -41,7 +44,16 @@ export default {
 	async fetch() {
 		await this.$store.dispatch('getProjects')
 	},
-	fetchDelay: 500,
+	head () {
+		if (this.project) {
+			return {
+				title: this.project._yoast_wpseo_title ? this.project._yoast_wpseo_title : "KODR Agency",
+				meta: [
+					{ hid: 'description', id: 'description', name: 'description', content: this.project._yoast_wpseo_metadesc }
+				]
+			}
+		}
+	},
 	computed: {
 		projects() {
 			return this.$store.state.projects

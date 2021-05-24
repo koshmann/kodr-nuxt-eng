@@ -2,7 +2,10 @@
 
 	<transition name="bounce">
 		<loading v-if="$fetchState.pending" />
-		<section v-else-if="$fetchState.error">An error occurred :(</section>
+		<section v-else-if="$fetchState.error || !currentTag || !filteredProjects" class="mx-3 p-3 py-6 bg-gray-light rounded-2xl">
+			<h1 class="text-2xl font-medium mb-4">При загрузке произошла ошибка. Попробуйте перезагрузить страницу или вернуться на главную.</h1>
+			<NuxtLink class="btn bg-red text-white" to="/">На главную</NuxtLink>
+		</section>
 
 		<section v-else-if="!$fetchState.pending && !$fetchState.error" class="mx-3 px-3 py-6 bg-gray-light rounded-2xl">
 			<div
@@ -30,7 +33,7 @@
 				>
 					<div class="group">
 						<div
-							class="rounded-lg overflow-hidden project-cover relative pt-[60%]"
+							class="rounded-lg overflow-hidden project-cover relative pt-[60%] sm:pt-[100%]"
 						>
 							<nuxt-link :to="`/projects/${project.slug}`">
 								<img
@@ -40,11 +43,11 @@
 									alt=""
 								>
 								<div class="absolute top-4 left-4">
-									<h3 class="font-title font-medium text-xl mb-2">
+									<h3 class="font-title font-medium text-xl mb-2" :class="{'text-gray-light': isLightText(project.acf.textcolor)}">
 										{{ project.title.rendered }}
 									</h3>
 									<div
-										class="text-sm opacity-0 max-w-xs group-hover:opacity-100 transition duration-500 delay-200"
+										class="text-sm opacity-0 max-w-xs group-hover:opacity-100 transition duration-500 delay-200 sm:opacity-100 sm:mr-24" :class="{'text-gray-medium': isLightText(project.acf.textcolor)}"
 										v-html="project.excerpt.rendered"
 									/>
 								</div>
@@ -56,7 +59,7 @@
 										v-for="tag in project._embedded['wp:term'][1]"
 										:key="tag.id"
 										:to="`/tags/${tag.slug}`"
-										class="tag !px-3 !py-2 text-sm border-gray-light bg-gray-light bg-opacity-80 hover:bg-opacity-100 hover:border-gray-dark hover:bg-gray-dark"
+										class="tag !px-3 !py-2 text-xs !border-0 border-gray-light bg-gray-light bg-opacity-80 hover:bg-opacity-100 hover:border-gray-dark hover:bg-gray-dark"
 									>
 										{{ tag.name }}
 									</nuxt-link>
@@ -96,7 +99,9 @@ export default {
 		}
 	},
 	methods: {
-
+		isLightText(textColor) {
+			return textColor === "Светлый"
+		}
 	}
 }
 </script>
