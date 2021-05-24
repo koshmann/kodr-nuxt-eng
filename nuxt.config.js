@@ -86,6 +86,7 @@ export default {
 		}
 	},
 	layoutTransition: 'bounce',
+	pageTransition: 'bounce'
 	// generate: {
 	// 	routes: [dynamicProjectRoutes, dynamicPageRoutes],
 	// },

@@ -121,24 +121,3 @@
 		grid-area: vid;
 	}
 }
-/* clean-css ignore:start */
-.footer-logo .logo-dot {
-	transition: 0.3s ease;
-}
-
-.footer-logo:not(:hover) .logo-dot {
-	fill: #828282;
-	r: 4px;
-	cx: 13px;
-}
-
-.kodr-logo .logo-dot {
-	transition: .3s ease;
-}
-
-.kodr-logo:not(:hover) .logo-dot {
-	fill: #828282;
-	r: 4px;
-	cx: 34px;
-}
-/* clean-css ignore:end */

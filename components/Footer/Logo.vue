@@ -46,7 +46,7 @@
 					r="6"
 					fill="#FF3300"
 				/>
-				<circle class="logo-dot" cx="37" cy="13" r="4" fill="#FF3300" />
+				<circle class="logo-dot logo-dot-8" cx="37" cy="13" r="4" fill="#FF3300" />
 			</svg>
 		</nuxt-link>
 	</div>
@@ -55,11 +55,16 @@
 <style>
 .footer-logo .logo-dot {
 	transition: 0.3s ease;
+	transform-origin: center center;
+    transform-box: fill-box;
 }
 
-.footer-logo:not(:hover) .logo-dot {
-	fill: #828282;
-	r: 4px;
-	cx: 13px;
+.footer-logo:not(:hover) .logo-dot:not(.logo-dot-8) {
+    fill: #828282;
+    transform: translateX(-24px) scale(0);
+}
+.footer-logo:not(:hover) .logo-dot-8 {
+    fill: #828282;
+    transform: translateX(-24px);
 }
 </style>
