@@ -78,7 +78,7 @@
 	</div>
 </template>
 
-<style scoped>
+<style>
   .kodr-logo .logo-dot {
     transition: .3s ease;
   }
