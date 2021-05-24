@@ -1,13 +1,6 @@
 <template>
-	<div
-		id="logo"
-		class="logo"
-	>
-		<nuxt-link
-			to="/"
-			title="KODR Agency"
-			rel="home"
-		>
+	<div id="logo" class="logo">
+		<nuxt-link to="/" title="KODR Agency" rel="home">
 			<svg
 				class="kodr-logo inline"
 				width="120"
@@ -34,59 +27,65 @@
 					d="M0.658027 26C0.294609 26 0 25.709 0 25.35V0.649999C0 0.291014 0.294609 0 0.658027 0L4.42313 0C4.78655 0 5.08116 0.291015 5.08116 0.65V9.85C5.08116 10.209 5.37577 10.5 5.73919 10.5H8.99763C9.21443 10.5 9.41732 10.3945 9.54005 10.218L16.2493 0.282024C16.3721 0.105488 16.575 0 16.7918 0L20.7646 0C21.2934 0 21.6062 0.584946 21.3081 1.0164L13.6642 12.0806C13.5129 12.2995 13.5114 12.5872 13.6603 12.8077L21.8882 24.9892C22.18 25.4212 21.8665 26 21.3409 26H17.1674C16.9496 26 16.7458 25.8935 16.6233 25.7155L9.72671 15.2845C9.60419 15.1065 9.40046 15 9.1826 15H5.73918C5.37577 15 5.08116 15.291 5.08116 15.65V25.35C5.08116 25.709 4.78655 26 4.42313 26H0.658027Z"
 					fill="#333333"
 				/>
-				<circle
-					class="logo-dot logo-dot-24"
-					opacity="0.2"
-					cx="59"
-					cy="13"
-					r="12"
-					fill="#FF3300"
-				/>
-				<circle
-					class="logo-dot logo-dot-20"
-					opacity="0.4"
-					cx="59"
-					cy="13"
-					r="10"
-					fill="#FF3300"
-				/>
-				<circle
-					class="logo-dot logo-dot-16"
-					opacity="0.6"
-					cx="59"
-					cy="13"
-					r="8"
-					fill="#FF3300"
-				/>
-				<circle
-					class="logo-dot logo-dot-12"
-					opacity="0.8"
-					cx="59"
-					cy="13"
-					r="6"
-					fill="#FF3300"
-				/>
-				<circle
-					class="logo-dot logo-dot-8"
-					cx="59"
-					cy="13"
-					r="4"
-					fill="#FF3300"
-				/>
+				<g class="dots">
+					<circle
+						class="logo-dot logo-dot-24"
+						opacity="0.2"
+						cx="59"
+						cy="13"
+						r="12"
+						fill="#FF3300"
+					/>
+					<circle
+						class="logo-dot logo-dot-20"
+						opacity="0.4"
+						cx="59"
+						cy="13"
+						r="10"
+						fill="#FF3300"
+					/>
+					<circle
+						class="logo-dot logo-dot-16"
+						opacity="0.6"
+						cx="59"
+						cy="13"
+						r="8"
+						fill="#FF3300"
+					/>
+					<circle
+						class="logo-dot logo-dot-12"
+						opacity="0.8"
+						cx="59"
+						cy="13"
+						r="6"
+						fill="#FF3300"
+					/>
+					<circle
+						class="logo-dot logo-dot-8"
+						cx="59"
+						cy="13"
+						r="4"
+						fill="#FF3300"
+					/>
+				</g>
 			</svg>
 		</nuxt-link>
 	</div>
 </template>
 
-<style>
-  .kodr-logo .logo-dot {
-    transition: .3s ease;
-  }
+<style lang="scss">
+.kodr-logo .logo-dot {
+	transition: 0.3s ease;
+	transform-origin: center center;
+    transform-box: fill-box;
+}
 
-  .kodr-logo:not(:hover) .logo-dot {
+.kodr-logo:not(:hover) .logo-dot:not(.logo-dot-8) {
     fill: #828282;
-    r: 4px;
-    cx: 34px;
-  }
-
+    transform: translateX(-24px) scale(0);
+}
+.kodr-logo:not(:hover) .logo-dot-8 {
+    fill: #828282;
+    transform: translateX(-24px);
+}
 </style>
