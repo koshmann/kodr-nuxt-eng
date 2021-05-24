@@ -1,18 +1,18 @@
-import axios from 'axios'
-let dynamicProjectRoutes = () => {
-	return axios
-		.get('https://dev.kodr.agency/wp-json/wp/v2/projects?_fields=slug')
-		.then((res) => {
-			return res.data.map((project) => `/project/${project.slug}`)
-		})
-}
-let dynamicPageRoutes = () => {
-	return axios
-		.get('https://dev.kodr.agency/wp-json/wp/v2/pages?_fields=slug')
-		.then((res) => {
-			return res.data.map((page) => `/${page.slug}`)
-		})
-}
+// import axios from 'axios'
+// let dynamicProjectRoutes = () => {
+// 	return axios
+// 		.get('https://dev.kodr.agency/wp-json/wp/v2/projects?_fields=slug')
+// 		.then((res) => {
+// 			return res.data.map((project) => `/project/${project.slug}`)
+// 		})
+// }
+// let dynamicPageRoutes = () => {
+// 	return axios
+// 		.get('https://dev.kodr.agency/wp-json/wp/v2/pages?_fields=slug')
+// 		.then((res) => {
+// 			return res.data.map((page) => `/${page.slug}`)
+// 		})
+// }
 // let dynamicProjectTagRoutes = () => {
 // 	return axios
 // 		.get('https://dev.kodr.agency/wp-json/wp/v2/tags?_fields=slug')
@@ -48,7 +48,6 @@ export default {
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [
-		'~/plugins/v-mask.js',
 		'~/plugins/vue-tel-input.js'
 	],
 
@@ -72,6 +71,9 @@ export default {
 
 	tailwindcss: {
 		jit: true,
+	},
+	purgeCSS: {
+		enabled: false
 	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
