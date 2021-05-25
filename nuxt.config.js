@@ -34,7 +34,11 @@ export default {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: 'Дизайн. Интерфейсы. 3D графика. Диджитал.' },
+			{
+				hid: 'description',
+				name: 'description',
+				content: 'Дизайн. Интерфейсы. 3D графика. Диджитал.',
+			},
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 	},
@@ -47,9 +51,7 @@ export default {
 	],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [
-		'~/plugins/vue-tel-input.js'
-	],
+	plugins: ['~/plugins/vue-tel-input.js'],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -73,20 +75,18 @@ export default {
 		jit: true,
 	},
 	purgeCSS: {
-		enabled: false
+		enabled: false,
 	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
 		transpile: ['gsap', 'gsap/Draggable'],
-		babel:{
-			plugins: [
-				['@babel/plugin-proposal-private-methods', { loose: true }]
-			]
-		}
+		babel: {
+			plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
+		},
 	},
 	layoutTransition: 'bounce',
-	pageTransition: 'bounce'
+	pageTransition: 'bounce',
 	// generate: {
 	// 	routes: [dynamicProjectRoutes, dynamicPageRoutes],
 	// },

@@ -14,15 +14,12 @@
 <script>
 export default {
 	data() {
-		return {
-			
-		}
+		return {}
 	},
 	computed: {
 		isOverlay() {
-			return this.$store.state.overlay;
-		} 
+			return this.$store.state.overlay
+		},
 	},
-	
 }
 </script>

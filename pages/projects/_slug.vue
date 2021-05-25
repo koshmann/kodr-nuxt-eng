@@ -108,7 +108,7 @@ export default {
 	head () {
 		if (this.project) {
 			return {
-				title: this.project._yoast_wpseo_title ? this.project._yoast_wpseo_title : "KODR Agency",
+				title: this.project._yoast_wpseo_title ? `${this.project._yoast_wpseo_title} - KODR Agency` : "KODR Agency",
 				meta: [
 					{ hid: 'description', id: 'description', name: 'description', content: this.project._yoast_wpseo_metadesc }
 				]

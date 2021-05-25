@@ -77,6 +77,11 @@
 //import { myPage } from '~/utils/transitions.js'
 export default {
 	transition: 'bounce',
+	head() {
+		return {
+			title: "Контакты - KODR Agency",
+		}
+	},
 }
 </script>
 

@@ -63,6 +63,11 @@ export default {
 	async fetch() {
 		await this.$store.dispatch("getProjects");
 	},
+	head() {
+		return {
+			title: "Проекты - KODR Agency",
+		}
+	},
 	computed: {
 		projects() {
 			return this.$store.state.projects

@@ -136,20 +136,26 @@
 						<label for="contact-accept-policy" class="flex items-center sm:mb-6">
 							<input
 								id="contact-accept-policy"
+								v-model="acceptPolicy"
 								type="checkbox"
 								name="accept-policy"
-								class="mr-4"
+								class="mr-4 hidden"
+								checked
 								required
 							>
-							<p class="text-sm text-gray">
-								Нажимая кнопку, Вы даёте согласие на обработку персональных
-								данных
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="privacy-checkbox mr-4">
+								<path class="hidden" d="M11 4L6 10L3 7" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" />
+								<rect x="1" y="1" width="12" height="12" rx="2" stroke="#828282" />
+							</svg>
+
+							<p class="text-sm text-gray leading-4">
+								Соглашаюсь на обработку <nuxt-link class="text-gray-dark underline hover:text-red transition-colors duration-200 ease" to="/privacy-policy">персональных данных</nuxt-link>
 							</p>
 						</label>
 						<button
 							type="submit"
-							class="btn place-self-end outline-none select-none border-red hover:bg-red hover:text-gray-light disabled:opacity-75 disabled:cursor-wait"
-							:disabled="cfSubmitting"
+							class="btn place-self-end !outline-none select-none border-red hover:bg-red hover:text-gray-light disabled:opacity-75 disabled:cursor-not-allowed"
+							:disabled="cfSubmitting || !acceptPolicy"
 						>
 							<span>Отправить</span>
 						</button>
@@ -187,6 +193,7 @@ export default {
 			},
 			cfResponseMessage: "",
 			cfSubmitting: false,
+			acceptPolicy: true
 		}
 	},
 	methods: {
@@ -249,5 +256,8 @@ export default {
 	}
 	.vti__dropdown-list .vti__dropdown-item strong {
 		font-weight: normal;
+	}
+	#contact-accept-policy:checked + .privacy-checkbox > .hidden {
+		display: block !important;
 	}
 </style>

@@ -35,10 +35,10 @@
 			>
 				<div class="flex-1">
 					<h1 class="text-5xl font-title font-medium sm:text-3xl sm:leading-7">
-						Создаём сайты, <span class="text-gray">которые раскрывают потенциал Вашего бизнеса.</span>
+						Интерфейсы, 3D, Фронтэнд, <span class="text-gray">Диджитал.</span>
 					</h1>
 					<p class="pt-4 pb-8 text-gray">
-						Дизайн. Интерфейсы. 3D графика. Диджитал.
+						Создаём сайты, которые раскрывают потенциал Вашего бизнеса.
 					</p>
 					<nuxt-link to="/contacts" class="btn border-red hover:text-white hover:bg-red">
 						<span>Заказать проект</span>
