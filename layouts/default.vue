@@ -7,6 +7,9 @@
 				<footer-contact-footer v-if="$nuxt.$route.name === 'contacts'" />
 				<the-footer v-else />
 			</transition>
+			<transition name="bounce">
+				<lazy-cookie-consent v-if="shouldShowCookie" @consentClosed="saveCookieConsent" />
+			</transition>
 			<overlay v-show="isOverlay" />
 		</div>
 	</body>
@@ -14,12 +17,27 @@
 <script>
 export default {
 	data() {
-		return {}
+		return {
+			wasClosed: false,
+			shouldShowCookie: false
+		}
 	},
 	computed: {
 		isOverlay() {
 			return this.$store.state.overlay
 		},
 	},
+	mounted() {
+		this.shouldShowPromt()
+	},
+	methods: {
+		saveCookieConsent(isPromtOpen) {
+			this.shouldShowCookie = !isPromtOpen;
+			localStorage.setItem("kodrCookieConsent", true);
+		},
+		shouldShowPromt() {
+			this.shouldShowCookie = !localStorage.getItem("kodrCookieConsent");
+		},
+	}
 }
 </script>

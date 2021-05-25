@@ -90,11 +90,19 @@
 						class="mobile-burger btn !py-4 !px-4 !outline-none border-gray-medium transition duration-200 ease-in-out hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
 						@click="showBurgerMenu"
 					>
-						<svg width="21" height="15" viewBox="0 0 21 15" fill="none">
-							<path d="M20.5 0.5H0.5" stroke="currentColor" />
-							<path d="M20.5 14.5H0.5" stroke="currentColor" />
-							<path d="M20.5 7.5H0.5" stroke="currentColor" />
+						<svg
+							class="mobile-burger transition-all duration-200"
+							width="17"
+							height="17"
+							viewBox="0 0 24 15"
+							fill="none"
+						>
+							<path d="M24 0.5H0" stroke="currentColor" :class="{ 'opacity-0 ': mobileMenu }" />
+							<path d="M24 7.5H0" stroke="currentColor" :class="{ 'transform origin-center rotate-45 ': mobileMenu }" />
+							<path d="M24 7.5H0" stroke="currentColor" :class="{ 'transform origin-center -rotate-45 ': mobileMenu }" />
+							<path d="M24 14.5H0" stroke="currentColor" :class="{ 'opacity-0 ': mobileMenu }" />
 						</svg>
+						
 					</button>
 				</div>
 			</div>
@@ -202,6 +210,25 @@ svg.burger {
 		transition: transform 0.25s;
 	}
 	&.to-cross {
+		path:nth-child(3) {
+			opacity: 0;
+			transform: translateY(7px);
+		}
+		path:nth-child(1) {
+			transform: rotate(-45deg);
+		}
+
+		path:nth-child(2) {
+			transform: rotate(45deg);
+		}
+	}
+}
+svg.mobile-burger {
+	path {
+		transform-origin: 50% 50%;
+		transition: transform 0.25s;
+	}
+	&.to-cross {
 		path:nth-child(1) {
 			opacity: 0;
 			transform: translateY(7px);
@@ -212,10 +239,6 @@ svg.burger {
 
 		path:nth-child(3) {
 			transform: rotate(45deg);
-		}
-		path:nth-child(4) {
-			opacity: 0;
-			transform: translateY(-7px);
 		}
 	}
 }
