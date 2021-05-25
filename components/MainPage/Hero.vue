@@ -27,7 +27,7 @@
 			</div>
 		</div>
 
-		<div class="title-part relative px-3 py-48 rounded-2xl bg-gray-light transition-all duration-500 ease sm:py-12"
+		<div class="title-part relative px-3 py-60 rounded-2xl bg-gray-light transition-all duration-500 ease sm:py-12"
 			:class="{'title-part-to-left':showreelShown}"
 		>
 			<div class="title block max-w-xl transition-all duration-200 ease"

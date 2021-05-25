@@ -25,16 +25,15 @@
 						>
 							<svg
 								class="mr-2 burger"
-								:class="{ 'to-cross': menuActive }"
 								width="17"
 								height="17"
 								viewBox="0 0 24 15"
 								fill="none"
 							>
-								<path d="M24 0.5H0" stroke="currentColor" />
-								<path d="M24 7.5H0" stroke="currentColor" />
-								<path d="M24 7.5H0" stroke="currentColor" />
-								<path d="M24 14.5H0" stroke="currentColor" />
+								<path d="M24 0.5H0" stroke="currentColor" :class="{ 'opacity-0 ': menuActive }" />
+								<path d="M24 7.5H0" stroke="currentColor" class="transform origin-center transition-transform duration-200 ease" :class="{ 'rotate-45 ': menuActive }" />
+								<path d="M24 7.5H0" stroke="currentColor" class="transform origin-center transition-transform duration-200 ease" :class="{ '-rotate-45 ': menuActive }" />
+								<path d="M24 14.5H0" stroke="currentColor" :class="{ 'opacity-0 ': menuActive }" />
 							</svg>
 							<span class="">Меню</span>
 						</a>
@@ -91,7 +90,7 @@
 						@click="showBurgerMenu"
 					>
 						<svg
-							class="mobile-burger transition-all duration-200"
+							class="mobile-burger transition-all duration-200 ease"
 							width="17"
 							height="17"
 							viewBox="0 0 24 15"
@@ -201,45 +200,6 @@ export default {
 	}
 	to {
 		transform: translateY(0) rotate(0);
-	}
-}
-
-svg.burger {
-	path {
-		transform-origin: 50% 50%;
-		transition: transform 0.25s;
-	}
-	&.to-cross {
-		path:nth-child(3) {
-			opacity: 0;
-			transform: translateY(7px);
-		}
-		path:nth-child(1) {
-			transform: rotate(-45deg);
-		}
-
-		path:nth-child(2) {
-			transform: rotate(45deg);
-		}
-	}
-}
-svg.mobile-burger {
-	path {
-		transform-origin: 50% 50%;
-		transition: transform 0.25s;
-	}
-	&.to-cross {
-		path:nth-child(1) {
-			opacity: 0;
-			transform: translateY(7px);
-		}
-		path:nth-child(2) {
-			transform: rotate(-45deg);
-		}
-
-		path:nth-child(3) {
-			transform: rotate(45deg);
-		}
 	}
 }
 
