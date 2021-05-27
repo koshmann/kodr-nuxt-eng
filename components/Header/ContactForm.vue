@@ -64,7 +64,7 @@
 							<label
 								for="contact-branding"
 								:class="{
-									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Брендинг'),
+									'bg-gray-dark !border-gray-dark !text-gray-light': isChecked('Брендинг'),
 								}"
 								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
@@ -83,7 +83,7 @@
 							<label
 								for="contact-web-dev"
 								:class="{
-									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Разработка сайта'),
+									'bg-gray-dark !border-gray-dark !text-gray-light': isChecked('Разработка сайта'),
 								}"
 								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
@@ -102,7 +102,7 @@
 							<label
 								for="contact-promo"
 								:class="{
-									'bg-gray-dark border-gray-dark !text-gray-light': isChecked('Продвижение'),
+									'bg-gray-dark !border-gray-dark !text-gray-light': isChecked('Продвижение'),
 								}"
 								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
@@ -245,6 +245,7 @@ export default {
 	.vue-tel-input:focus-within {
 		box-shadow: none;
 		border-color: #FF3300 !important;
+		outline: none !important;
 	}
 	.vti__dropdown {
 		border-radius: 8px;
@@ -253,6 +254,7 @@ export default {
 		width: 320px;
 		border-radius: 8px;
 		box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+		outline: none !important;
 	}
 	.vti__dropdown-list .vti__dropdown-item strong {
 		font-weight: normal;

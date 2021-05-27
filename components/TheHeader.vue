@@ -6,7 +6,7 @@
 	>
 		<div id="masthead" class="overflow-hidden relative">
 			<div
-				class="relative overflow-hidden bg-gray-light grid grid-cols-3 justify-between items-center p-3 m-3 mb-2 rounded-2xl z-10 transition-colors duration-300 sm:grid-cols-2"
+				class="relative overflow-hidden bg-gray-light grid grid-cols-3 justify-between items-center p-3 m-3 mb-2 rounded-2xl z-20 transition-colors duration-300 sm:grid-cols-2"
 				:class="{ '!bg-white !rounded-b-2xl !border-b-0': stuck }"
 			>
 				<div 
@@ -86,19 +86,19 @@
 				</div>
 				<div class="hidden text-right sm:block">
 					<button 
-						class="mobile-burger btn !py-4 !px-4 !outline-none border-gray-medium transition duration-200 ease-in-out hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
+						class="mobile-burger btn z-10 !py-4 !px-4 !outline-none border-gray-medium transition duration-200 ease-in-out hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
 						@click="showBurgerMenu"
 					>
 						<svg
-							class="mobile-burger transition-all duration-200 ease"
+							class="mobile-burger "
 							width="17"
 							height="17"
 							viewBox="0 0 24 15"
 							fill="none"
 						>
 							<path d="M24 0.5H0" stroke="currentColor" :class="{ 'opacity-0 ': mobileMenu }" />
-							<path d="M24 7.5H0" stroke="currentColor" :class="{ 'transform origin-center rotate-45 ': mobileMenu }" />
-							<path d="M24 7.5H0" stroke="currentColor" :class="{ 'transform origin-center -rotate-45 ': mobileMenu }" />
+							<path d="M24 7.5H0" stroke="currentColor" class="transform origin-center transition-transform duration-200 ease" :class="{ 'rotate-45 ': mobileMenu }" />
+							<path d="M24 7.5H0" stroke="currentColor" class="transform origin-center transition-transform duration-200 ease" :class="{ '-rotate-45 ': mobileMenu }" />
 							<path d="M24 14.5H0" stroke="currentColor" :class="{ 'opacity-0 ': mobileMenu }" />
 						</svg>
 						
@@ -233,15 +233,15 @@ export default {
 
 .mobile-menu-enter-active {
 	animation: mobile-menu-in 0.5s ease;
-	transform-origin: top right;
+	transform-origin: top center;
 }
 .mobile-menu-leave-active {
 	animation: mobile-menu-out 0.25s ease;
-	transform-origin: top right;
+	transform-origin: top center;
 }
 @keyframes mobile-menu-in {
 	0% {
-		transform: translateY(-25%) scale(0);
+		transform: translateY(-25%) scale(0.9);
 		opacity: 0;
 	}
 	100% {
@@ -256,7 +256,7 @@ export default {
 	}
 	100% {
 		opacity: 0;
-		transform: translateY(-25%) scale(0);
+		transform: translateY(25%) scale(1);
 	}
 }
 

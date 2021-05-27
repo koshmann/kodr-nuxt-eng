@@ -1,5 +1,5 @@
 <template>
-	<div class="flex bg-gray-light rounded-2xl p-3 fixed bottom-3 left-4 right-4 max-w-2xl shadow-2xl">
+	<div class="flex bg-white rounded-2xl p-3 fixed bottom-3 left-3 right-3 max-w-2xl shadow-2xl">
 		<div class="grid grid-cols-2 sm:flex">
 			<div class="flex items-center">
 				<svg class="flex-shrink-0 mr-3" width="17" height="17" viewBox="0 0 17 17" fill="none">

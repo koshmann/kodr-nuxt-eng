@@ -35,7 +35,7 @@
 }
 
 .title-text-block {
-	grid-template-areas: ". . title title text text text .";
+	grid-template-areas: ". . title title text text . .";
 	@apply grid grid-cols-8 gap-6 my-16;
 	.title-col {
 		grid-area: title;
@@ -46,6 +46,11 @@
 	.text-col {
 		grid-area: text;
 		@apply text-gray;
+	}
+}
+@media (max-width: 1025px) {
+	.title-text-block {
+		grid-template-areas: ". title title title text text text .";
 	}
 }
 @media (max-width: 767px) {
@@ -119,5 +124,15 @@
 	@apply grid grid-cols-8 gap-6;
 	.col {
 		grid-area: vid;
+	}
+}
+@media (max-width: 1025px) {
+	.video-center-block {
+		grid-template-areas: ". vid vid vid vid vid vid .";
+	}
+}
+@media (max-width: 767px) {
+	.video-center-block {
+		@apply block;
 	}
 }

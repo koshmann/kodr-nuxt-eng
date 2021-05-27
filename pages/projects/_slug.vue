@@ -71,7 +71,7 @@
 									> {{ relatedProject.title.rendered }} </h3>
 									<div
 										class="text-sm text-gray opacity-0 max-w-xs group-hover:opacity-100 transition duration-500 delay-100 sm:opacity-100 sm:mr-24"
-										:class="{'text-gray-medium': isLightText(project.acf.textcolor)}"
+										:class="{'text-gray-medium': isLightText(relatedProject.acf.textcolor)}"
 										v-html="relatedProject.excerpt.rendered"
 									/>
 								</div>

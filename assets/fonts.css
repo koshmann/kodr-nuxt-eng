@@ -34,3 +34,6 @@
     font-display: swap;
 }
 
+.player .vp-sidedock .box {
+	display: none !important;
+}

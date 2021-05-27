@@ -128,12 +128,12 @@
 
 		<div class="mt-12 border-b border-gray-darker" />
 
-		<div class="grid grid-cols-2 py-6 text-gray text-sm">
+		<div class="grid grid-cols-2 py-6 text-gray text-sm sm:grid-cols-1">
 			<div>
 				<p>© KODR, 2021</p>
 			</div>
 
-			<div class="text-right">
+			<div class="text-right sm:text-left sm:mt-2">
 				<nuxt-link
 					to="/privacy-policy"
 					class="underline hover:text-gray-light transition-colors duration-200"

@@ -1,9 +1,9 @@
 <template>
-	<section id="hero" class="relative overflow-hidden transition-all duration-500 ease" :class="{'showreel-shown': showreelShown}">
+	<section id="hero" class="relative overflow-hidden transition-all duration-500 ease rounded-2xl" :class="{'showreel-shown': showreelShown}">
 
 		<div class="showreel-part absolute flex items-center justify-end top-0 left-0 w-full h-full rounded-2xl overflow-hidden">
-			<div class="bg-red absolute h-full w-full z-0">
-				<button class="btn absolute opacity-0 !outline-none !p-4 text-gray-light right-0 top-4 transition-all duration-500 ease hover:bg-gray-light hover:text-gray-dark hover:border-gray-light"
+			<div class="bg-gray-darker absolute h-full w-full rounded-2xl">
+				<button class="btn absolute z-30 opacity-0 !outline-none !p-4 text-gray-light right-0 top-4 transition-all duration-500 ease hover:bg-gray-light hover:text-gray-dark hover:border-gray-light"
 					:class="{'opacity-100 !right-4 delay-0':showreelShown}"
 					@click="showreelShown = false"
 				>
@@ -12,6 +12,21 @@
 						<path d="M17.9852 1.01479L1.01465 17.9854" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 				</button>
+				<transition name="change-showreel">
+					<div v-if="!showreelShown" class="cover-vid">
+						<div class="absolute left-1/4 flex items-center h-full w-full transition-all duration-200 ease sm:left-0 sm:items-end" :class="{'!left-0':showreelShown}">
+							<video class="" autoplay="" loop="" muted="" src="~/assets/Cover-Showreel.mp4" poster="~/assets/cover-preview.jpg" playsinline="" />
+						</div>
+						<div class="absolute bg-gray-dark opacity-75 w-full h-full" />
+					</div>
+					<div v-else-if="showreelShown" class="vimeo-vid max-h-full">
+						<div>
+							<iframe src="https://player.vimeo.com/video/555629321?autoplay=1&color=ff3300&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<script src="https://player.vimeo.com/api/player.js"></script>
+					</div>
+				</transition>
+				
 			</div>
 			<div 
 				class="watch-showreel select-none flex items-center text-gray-light z-10 cursor-pointer transition-all duration-500 ease"
@@ -35,7 +50,7 @@
 			>
 				<div class="flex-1">
 					<h1 class="text-5xl font-title font-medium sm:text-3xl sm:leading-7">
-						Интерфейсы, 3D, Фронтэнд, <span class="text-gray">Диджитал.</span>
+						Интерфейсы. 3D. Фронтенд. <span class="text-gray">Диджитал.</span>
 					</h1>
 					<p class="pt-4 pb-8 text-gray">
 						Создаём сайты, которые раскрывают потенциал Вашего бизнеса.
@@ -106,7 +121,7 @@ export default {
 	}
 
 	.title-part-to-left {
-		transform: translateX(-100%);
+		transform: translateX(-101%);
 	}
 	.title-to-opacity {
 		opacity: 0;
@@ -164,4 +179,32 @@ export default {
 		}
 	}
 
+.change-showreel-enter-active {
+	animation: change-showreel-in 0.5s ease;
+	transform-origin: center center;
+}
+.change-showreel-leave-active {
+	animation: change-showreel-out 0.5s ease;
+	transform-origin: center center;
+}
+@keyframes change-showreel-in {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes change-showreel-out {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(0);
+	}
+}
 </style>
