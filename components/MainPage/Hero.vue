@@ -15,7 +15,9 @@
 				<transition name="change-showreel">
 					<div v-if="!showreelShown" class="cover-vid">
 						<div class="absolute left-1/4 flex items-center h-full w-full transition-all duration-200 ease sm:left-0 sm:items-end" :class="{'!left-0':showreelShown}">
-							<video class="" autoplay="" loop="" muted="" src="~/assets/Cover-Showreel.mp4" poster="~/assets/cover-preview.jpg" playsinline="" />
+							<video class="" autoplay loop muted playsinline poster="/cover-preview.jpg">  
+								<source src="~/assets/Cover-Showreel.mp4"> 
+							</video>
 						</div>
 						<div class="absolute bg-gray-dark opacity-75 w-full h-full" />
 					</div>

@@ -249,6 +249,7 @@ export default {
 	}
 	.vti__dropdown {
 		border-radius: 8px;
+		outline: none !important;
 	}
 	.vti__dropdown-list {
 		width: 320px;
