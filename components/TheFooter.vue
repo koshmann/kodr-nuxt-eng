@@ -31,7 +31,7 @@
 						Мы постараемся, чтоб Ваш проект стал лучшим в нашем портфолио.
 					</p>
 					<nuxt-link to="/contacts" class="btn border-red text-gray-light hover:text-white hover:bg-red ">
-						<span>Заказать проект</span>
+						<span>Заявка</span>
 						<svg
 							class="hidden"
 							width="19"
@@ -55,7 +55,7 @@
 
 				<div class="grid grid-cols-4 gap-6 text-gray sm:grid-cols-2 sm:gap-4">
 					<a
-						href="#"
+						href="https://www.instagram.com/kodr.agency/"
 						class="flex items-center hover:text-gray-light transition-colors duration-200"
 					>
 						<span class="mr-3">Instagram</span>
@@ -72,7 +72,7 @@
 						</svg>
 					</a>
 					<a
-						href="#"
+						href="https://www.behance.net/KODR"
 						class="flex items-center hover:text-gray-light transition-colors duration-200"
 					>
 						<span class="mr-3">Behance</span>
@@ -89,7 +89,7 @@
 						</svg>
 					</a>
 					<a
-						href="#"
+						href="https://t.me/koshmann"
 						class="flex items-center hover:text-gray-light transition-colors duration-200"
 					>
 						<span class="mr-3">Telegram</span>
@@ -106,7 +106,7 @@
 						</svg>
 					</a>
 					<a
-						href="#"
+						href="https://wa.me/380505686527"
 						class="flex items-center hover:text-gray-light transition-colors duration-200"
 					>
 						<span class="mr-3">What'sApp</span>

@@ -47,7 +47,7 @@
 										{{ project.title.rendered }}
 									</h3>
 									<div
-										class="text-sm opacity-0 max-w-xs group-hover:opacity-100 transition duration-500 delay-200 sm:opacity-100 sm:mr-24" :class="{'text-gray-medium': isLightText(project.acf.textcolor)}"
+										class="text-sm text-gray opacity-0 max-w-xs group-hover:opacity-100 transition duration-500 delay-200 sm:opacity-100 sm:mr-24" :class="{'text-gray-medium': isLightText(project.acf.textcolor)}"
 										v-html="project.excerpt.rendered"
 									/>
 								</div>

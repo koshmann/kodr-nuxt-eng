@@ -14,16 +14,16 @@
 					<div>
 						<p class="text-sm text-gray mb-2">Телефон</p>
 						<a
-							href="#"
+							href="tel:+79185839396"
 							class="kodr-underline hover:text-red transition-colors duration-200"
 						>
-							<span>+7 (123) 456 78 90</span>
+							<span>+7 (918) 583 93 96</span>
 						</a>
 					</div>
 					<div>
 						<p class="text-sm text-gray mb-2">Email</p>
 						<a
-							href="#"
+							href="mailto:info@kodr.agency"
 							class="kodr-underline hover:text-red transition-colors duration-200"
 						>
 							<span>info@kodr.agency</span>
@@ -35,7 +35,7 @@
 					<div class="grid grid-cols-4 sm:grid-cols-2 sm:gap-4">
 						<div>
 							<a
-								href="#"
+								href="https://www.instagram.com/kodr.agency/"
 								class="kodr-underline hover:text-red transition-colors duration-200"
 							>
 								<span>Instagram</span>
@@ -43,7 +43,7 @@
 						</div>
 						<div>
 							<a
-								href="#"
+								href="https://www.behance.net/KODR"
 								class="kodr-underline hover:text-red transition-colors duration-200"
 							>
 								<span>Behance</span>
@@ -51,7 +51,7 @@
 						</div>
 						<div>
 							<a
-								href="#"
+								href="https://t.me/koshmann"
 								class="kodr-underline hover:text-red transition-colors duration-200"
 							>
 								<span>Telegram</span>
@@ -59,7 +59,7 @@
 						</div>
 						<div>
 							<a
-								href="#"
+								href="https://wa.me/380505686527"
 								class="kodr-underline hover:text-red transition-colors duration-200"
 							>
 								<span>What'sApp</span>
