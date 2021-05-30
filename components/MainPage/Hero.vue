@@ -3,7 +3,7 @@
 
 		<div class="showreel-part absolute flex items-center justify-end top-0 left-0 w-full h-full rounded-2xl overflow-hidden">
 			<div class="bg-gray-darker absolute h-full w-full rounded-2xl">
-				<button class="btn absolute z-30 opacity-0 !outline-none !p-4 text-gray-light right-0 top-4 transition-all duration-500 ease hover:bg-gray-light hover:text-gray-dark hover:border-gray-light"
+				<button class="btn absolute z-10 opacity-0 !outline-none !p-4 text-gray-light right-0 top-4 transition-all duration-500 ease hover:bg-gray-light hover:text-gray-dark hover:border-gray-light"
 					:class="{'opacity-100 !right-4 delay-0':showreelShown}"
 					@click="showreelShown = false"
 				>
