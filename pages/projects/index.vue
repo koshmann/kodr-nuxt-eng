@@ -1,15 +1,17 @@
 <template>
 	<transition name="bounce">
 		<loading v-if="$fetchState.pending" />
-		<section v-else-if="$fetchState.error">An error occurred :(</section>
-
+		<section v-else-if="$fetchState.error || !projects" class="mx-3 p-3 py-6 bg-gray-light rounded-2xl">
+			<h1 class="text-2xl font-medium mb-4">При загрузке произошла ошибка. Попробуйте перезагрузить страницу или вернуться на главную.</h1>
+			<NuxtLink class="btn bg-red text-white" to="/">На главную</NuxtLink>
+		</section>
 		<section v-else-if="!$fetchState.pending && !$fetchState.error" class="px-3 py-6 bg-gray-light rounded-2xl mx-3">
 			<div
 				class="flex justify-between items-center pb-3 mb-6 border-gray-medium border-b"
 			>
-				<h2 class="text-3xl font-title font-medium text-gray max-w-xs leading-7 sm:text-xl sm:leading-6 sm:w-48">
-					<span class="text-gray-dark">Проекты,</span>
-					<span>которыми мы гордимся</span>
+				<h2 class="text-3xl w-64 font-title font-medium text-gray max-w-xs leading-7 sm:text-xl sm:leading-6 sm:w-48">
+					<span class="text-gray-dark">Projects,</span>
+					<span>we are proud of</span>
 				</h2>
 			</div>
 

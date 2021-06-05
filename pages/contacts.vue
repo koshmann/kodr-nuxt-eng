@@ -4,15 +4,15 @@
 			<div
 				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:mb-8"
 			>
-				<h2 class="text-gray-dark text-4xl font-medium sm:text-2xl">Контакты</h2>
+				<h2 class="text-gray-dark text-4xl font-medium sm:text-2xl">Contacts</h2>
 				<div class="text-gray text-right sm:hidden">
-					<p>Будем рады познакомиться!</p>
+					<p>We are always excited to hear from you</p>
 				</div>
 			</div>
 			<div class="grid grid-cols-2 sm:block">
 				<div class="grid grid-cols-2 sm:mb-8 sm:gap-4">
 					<div>
-						<p class="text-sm text-gray mb-2">Телефон</p>
+						<p class="text-sm text-gray mb-2">Phone</p>
 						<a
 							href="tel:+79185839396"
 							class="kodr-underline hover:text-red transition-colors duration-200"
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="">
-					<p class="text-sm text-gray mb-2">Медиа</p>
+					<p class="text-sm text-gray mb-2">Links</p>
 					<div class="grid grid-cols-4 sm:grid-cols-2 sm:gap-4">
 						<div>
 							<a
@@ -79,7 +79,7 @@ export default {
 	transition: 'bounce',
 	head() {
 		return {
-			title: "Контакты - KODR Agency",
+			title: "Contacts - KODR Agency",
 		}
 	},
 }

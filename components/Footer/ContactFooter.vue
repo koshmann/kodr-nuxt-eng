@@ -9,7 +9,7 @@
 				<nuxt-link
 					to="/privacy-policy"
 					class="underline hover:text-gray-light transition-colors duration-200"
-				> Политика конфиденциальности</nuxt-link>
+				> Privacy policy</nuxt-link>
 			</div>
 		</div>
 	</footer>

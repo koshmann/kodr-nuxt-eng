@@ -38,13 +38,13 @@
 				class="flex justify-between items-center pb-3 mb-6 border-gray-medium border-b"
 			>
 				<h2 class="text-3xl font-title font-medium text-gray max-w-xs leading-7 sm:text-xl sm:leading-6 sm:w-48">
-					<span class="text-gray-dark">Другие проекты</span>
+					<span class="text-gray-dark">Other projects</span>
 				</h2>
 				<nuxt-link
 					to="/projects"
 					class="btn text-gray border-gray-medium hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light sm:!hidden"
 				>
-					<span class="mr-4">Все проекты</span>
+					<span class="mr-4">More projects</span>
 					<svg width="4" height="7" viewBox="0 0 4 7" fill="none">
 						<path d="M0 0L4 3.5L0 7V0Z" fill="currentColor" />
 					</svg>

@@ -10,7 +10,7 @@
 				class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:block sm:mb-8"
 			>
 				<h3 class="text-gray-dark text-2xl font-medium">
-					Расскажите о Вашем проекте
+					Tell us about your idea
 				</h3>
 			</div>
 			<div class="grid grid-cols-2 gap-6 sm:block">
@@ -31,7 +31,7 @@
 						<div class="">
 							<label for="contact-phone">
 								<p class="text-sm text-gray mb-2">
-									Ваш телефон<span class="text-red">*</span>
+									Your phone<span class="text-red">*</span>
 								</p>
 							</label>
 							<vue-tel-input 
@@ -45,7 +45,7 @@
 						
 						<label for="contact-email">
 							<p class="text-sm text-gray mb-2">
-								Ваш email<span class="text-red">*</span>
+								Your email<span class="text-red">*</span>
 							</p>
 							<input
 								id="contact-email"
@@ -58,7 +58,7 @@
 					</div>
 					<div class="block sm:mb-4">
 						<label class="text-sm text-gray mb-2">
-							<p class="mb-2">Укажите тип Вашего проекта</p>
+							<p class="mb-2">We are talking about:</p>
 						</label>
 						<fieldset class="flex flex-wrap">
 							<label
@@ -69,7 +69,7 @@
 								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
 								<p class="text-sm">
-									Брендинг
+									Brand identity
 								</p>
 								<input
 									id="contact-branding"
@@ -88,7 +88,7 @@
 								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
 								<p class="text-sm">
-									Разработка сайта
+									Web development
 								</p>
 								<input
 									id="contact-web-dev"
@@ -107,7 +107,7 @@
 								class="group select-none block mr-2 py-3 px-4 rounded-lg border-2 border-gray text-gray transform transition-all duration-200 hover:border-gray-dark hover:text-gray-dark hover:scale-95 sm:mb-2"
 							>
 								<p class="text-sm">
-									Продвижение
+									Marketing
 								</p>
 								<input
 									id="contact-promo"
@@ -123,13 +123,13 @@
 				</div>
 				<div class="flex flex-col justify-between">
 					<label for="contact-message flex-grow-1 h-full flex flex-col">
-						<p class="text-sm text-gray mb-2">Ваше сообщение<span class="text-red">*</span></p>
+						<p class="text-sm text-gray mb-2">Your message<span class="text-red">*</span></p>
 					</label>
 					<textarea
 						id="contact-message"
 						name="contact-message"
 						class="block w-full h-full py-3 px-4 mb-5 bg-transparent rounded-lg border-2 border-gray outline-none focus:border-red"
-						placeholder="Опишите, задачу"
+						placeholder="Tell us about your project or idea"
 						required
 					/>
 					<div class="grid grid-cols-2 gap-6 sm:block">
@@ -149,7 +149,7 @@
 							</svg>
 
 							<p class="text-sm text-gray leading-4">
-								Соглашаюсь на обработку <nuxt-link class="text-gray-dark underline hover:text-red transition-colors duration-200 ease" to="/privacy-policy">персональных данных</nuxt-link>
+								Yes, I understand and agree to the <nuxt-link class="text-gray-dark underline hover:text-red transition-colors duration-200 ease" to="/privacy-policy">privacy policy</nuxt-link>
 							</p>
 						</label>
 						<button
@@ -157,7 +157,7 @@
 							class="btn place-self-end !outline-none select-none border-red hover:bg-red hover:text-gray-light disabled:opacity-75 disabled:cursor-not-allowed"
 							:disabled="cfSubmitting || !acceptPolicy"
 						>
-							<span>Отправить</span>
+							<span>Send</span>
 						</button>
 					</div>
 				</div>

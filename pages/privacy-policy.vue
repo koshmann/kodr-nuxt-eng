@@ -2,7 +2,10 @@
 	<div id="main" class="page bg-gray-dark mx-3">
 		<transition name="bounce">
 			<loading v-if="$fetchState.pending" />
-			<section v-else-if="$fetchState.error">An error occurred :(</section>
+			<section v-else-if="$fetchState.error || !page" class="mx-3 p-3 py-6 bg-gray-light rounded-2xl">
+				<h1 class="text-2xl font-medium mb-4">При загрузке произошла ошибка. Попробуйте перезагрузить страницу или вернуться на главную.</h1>
+				<NuxtLink class="btn bg-red text-white" to="/">На главную</NuxtLink>
+			</section>
 			<section v-else-if="!$fetchState.pending && !$fetchState.error" class="px-3 py-16 bg-gray-light rounded-2xl sm:py-4">
 				<div
 					class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:grid-cols-1 sm:mb-4"

@@ -35,7 +35,7 @@
 								<path d="M24 7.5H0" stroke="currentColor" class="transform origin-center transition-transform duration-200 ease" :class="{ '-rotate-45 ': menuActive }" />
 								<path d="M24 14.5H0" stroke="currentColor" :class="{ 'opacity-0 ': menuActive }" />
 							</svg>
-							<span class="">Меню</span>
+							<span class="">Menu</span>
 						</a>
 					</div>
 					<nav class="flex flex-row select-none">
@@ -46,7 +46,7 @@
 								'transform translate-y-4 rotate-6 origin-left opacity-0 transition-all duration-200 delay-75': !menuActive,
 							}"
 						>
-							Проекты
+							Projects
 						</nuxt-link>
 						<nuxt-link
 							to="/contacts"
@@ -55,7 +55,7 @@
 								'transform translate-y-4 rotate-6 origin-left opacity-0 transition-all duration-200 delay-75': !menuActive,
 							}"
 						>
-							Контакты
+							Contacs
 						</nuxt-link>
 					</nav>
 				</div>
@@ -69,7 +69,7 @@
 						to="/contacts"
 						class="btn border-red hover:bg-red hover:text-gray-light"
 					>
-						<span>Заявка</span>
+						<span>Get in touch</span>
 						<svg
 							class="hidden"
 							width="19"
@@ -113,19 +113,19 @@
 					<ul>
 						<li class="my-2">
 							<nuxt-link to="/projects">
-								Проекты
+								Projects
 							</nuxt-link>
 						</li>
 						<li class="my-2">
 							<nuxt-link to="/contacts">
-								Контакты
+								Contacts
 							</nuxt-link>
 						</li>
 					</ul>
 				</nav>
 				<nuxt-link to="/contacts">
 					<button class="btn !block mt-8 w-full bg-red border-red text-white !outline-none">
-						Заказать проект
+						Get in touch
 					</button>
 				</nuxt-link>
 			</div>

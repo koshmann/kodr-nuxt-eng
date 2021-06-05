@@ -29,7 +29,7 @@ export default {
 	head: {
 		title: 'KODR Agency',
 		htmlAttrs: {
-			lang: 'ru',
+			lang: 'en',
 		},
 		meta: [
 			{ charset: 'utf-8' },
@@ -37,7 +37,7 @@ export default {
 			{
 				hid: 'description',
 				name: 'description',
-				content: 'Дизайн. Интерфейсы. 3D графика. Диджитал.',
+				content: 'Interfaces. 3D. Frontend. Digital.',
 			},
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -73,6 +73,7 @@ export default {
 
 	tailwindcss: {
 		jit: true,
+		viewer: false
 	},
 	purgeCSS: {
 		enabled: false,

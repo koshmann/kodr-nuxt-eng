@@ -27,8 +27,7 @@
 					/>
 				</svg>
 				<p class="text-gray leading-5 mr-4 sm:leading-4">
-					Мы используем <span class="text-gray-dark">cookie</span>, чтобы
-					улучшить пользовательский опыт.
+					We use <span class="text-gray-dark">cookies</span>, to improve the user experience.
 				</p>
 			</div>
 			

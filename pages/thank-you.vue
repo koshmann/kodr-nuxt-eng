@@ -2,10 +2,10 @@
 	<div id="main" class="bg-gray-dark mx-3 rounded-lg">
 		<section class="text-gray-light py-9 px-3">
 			<h2 class="text-2xl text-medium mb-3">
-				Спасибо, Ваше сообщение уже у нас.
+				Thanks, we received your message.
 			</h2>
-			<p>Мы ответим в течение 24 часов.</p>
-			<p>Скоротайте ожидание за просмотром наших свежих кейсов.</p>
+			<p>We'll be back with an answer in 24 hours.</p>
+			<p>Skip the wait by watching our latest cases.</p>
 		</section>
 
 		<section class="px-3 py-3 bg-gray-light rounded-2xl my-2">
@@ -59,7 +59,7 @@
 					href="#"
 					class="btn text-gray border-gray-medium hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light"
 				>
-					<span class="mr-4">Все проекты</span>
+					<span class="mr-4">More projects</span>
 					<svg width="4" height="7" viewBox="0 0 4 7" fill="none">
 						<path d="M0 0L4 3.5L0 7V0Z" fill="currentColor" />
 					</svg>
@@ -78,6 +78,11 @@ export default {
 	},
 	async fetch() {
 		await this.$store.dispatch("getProjects");
+	},
+	head() {
+		return {
+			title: "Thanks! - KODR Agency",
+		}
 	},
 	computed: {
 		projects() {

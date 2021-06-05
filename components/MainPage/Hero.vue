@@ -52,13 +52,13 @@
 			>
 				<div class="flex-1">
 					<h1 class="text-5xl font-title font-medium sm:text-3xl sm:leading-7">
-						Интерфейсы. 3D. Фронтенд. <span class="text-gray">Диджитал.</span>
+						Interfaces. 3D. Frontend. <span class="text-gray">Digital.</span>
 					</h1>
 					<p class="pt-4 pb-8 text-gray">
-						Создаём сайты, которые раскрывают потенциал Вашего бизнеса.
+						We create a great digital presence for your business.
 					</p>
 					<nuxt-link to="/contacts" class="btn border-red hover:text-white hover:bg-red">
-						<span>Заказать проект</span>
+						<span>Get in touch</span>
 						<svg
 							class="hidden"
 							width="19"

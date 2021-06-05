@@ -1,12 +1,12 @@
 <template>
-	<footer class="px-3 bg-gray-dark text-gray-light rounded-lg m-3 mt-3">
+	<footer class="sticky bottom-0 z-0 px-3 bg-gray-dark text-gray-light rounded-lg m-3 mb-0">
 		<div class="flex justify-between items-center py-6 mb-12 border-gray-darker border-b">
 			<footer-logo />
 			<nuxt-link
 				to="/contacts"
 				class="btn text-gray-light border-gray-darker hover:border-gray-light hover:bg-gray-light hover:text-gray-dark"
 			>
-				<span class="mr-4">Контакты</span>
+				<span class="mr-4">Contact us</span>
 				<svg
 					width="4"
 					height="7"
@@ -25,13 +25,13 @@
 			<div class="grid grid-cols-2 sm:grid-cols-1">
 				<div>
 					<h3 class="text-lg mb-4">
-						Будем рады с Вами работать!
+						We are always excited to hear from you
 					</h3>
 					<p class="text-gray mb-8">
-						Мы постараемся, чтоб Ваш проект стал лучшим в нашем портфолио.
+						Let's makes something special together.
 					</p>
 					<nuxt-link to="/contacts" class="btn border-red text-gray-light hover:text-white hover:bg-red ">
-						<span>Заявка</span>
+						<span>Get a quote</span>
 						<svg
 							class="hidden"
 							width="19"
@@ -50,7 +50,7 @@
 			</div>
 			<div class="text-gray sm:mt-12">
 				<h3 class="text-lg mb-4 text-gray-light">
-					Для связи
+					Some links
 				</h3>
 
 				<div class="grid grid-cols-4 gap-6 text-gray sm:grid-cols-2 sm:gap-4">
@@ -137,7 +137,7 @@
 				<nuxt-link
 					to="/privacy-policy"
 					class="underline hover:text-gray-light transition-colors duration-200"
-				> Политика конфиденциальности</nuxt-link>
+				> Privacy policy</nuxt-link>
 			</div>
 		</div>
 	</footer>

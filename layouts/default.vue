@@ -2,7 +2,7 @@
 	<body class="text-gray-dark font-body bg-gray-dark">
 		<div class="wrap">
 			<the-header />
-			<Nuxt />
+			<Nuxt class="relative z-10" />
 			<transition name="page">
 				<footer-contact-footer v-if="$nuxt.$route.name === 'contacts'" />
 				<the-footer v-else />
