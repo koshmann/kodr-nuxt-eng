@@ -1,6 +1,6 @@
 {
-  "name": "kodr-nuxt",
-  "version": "2.0.0",
+  "name": "kodr-nuxt-eng",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
