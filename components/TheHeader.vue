@@ -7,7 +7,7 @@
 		<div id="masthead" class="overflow-hidden relative">
 			<div
 				class="relative overflow-hidden bg-gray-light grid grid-cols-3 justify-between items-center p-3 m-3 mb-2 rounded-2xl z-20 transition-colors duration-300 sm:grid-cols-2"
-				:class="{ '!bg-white !rounded-b-2xl !border-b-0': stuck }"
+				:class="{ '!bg-white !rounded-b-2xl !border-b-0 !bg-opacity-80 backdrop-filter backdrop-blur-lg': stuck }"
 			>
 				<div 
 					class="divider border-gray-medium border-b absolute bottom-0 left-3 right-3"
