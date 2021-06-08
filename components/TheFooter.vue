@@ -1,5 +1,5 @@
 <template>
-	<footer class="sticky bottom-0 z-0 px-3 bg-gray-dark text-gray-light rounded-lg m-3 mb-0">
+	<footer class="px-3 bg-gray-dark text-gray-light rounded-lg m-3 mb-0">
 		<div class="flex justify-between items-center py-6 mb-12 border-gray-darker border-b">
 			<footer-logo />
 			<nuxt-link
