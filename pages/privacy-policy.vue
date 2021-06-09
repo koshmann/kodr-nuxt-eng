@@ -10,11 +10,11 @@
 				<div
 					class="grid grid-cols-2 justify-between items-baseline pb-4 mb-16 border-gray-medium border-b sm:grid-cols-1 sm:mb-4"
 				>
-					<h2 class="text-gray-dark text-4xl font-medium sm:text-2xl">
+					<h1 class="text-gray-dark text-4xl font-medium sm:text-2xl">
 						{{ page.title.rendered }}
-					</h2>
+					</h1>
 				</div>
-				<div class="content privacy-policy" v-html="page.content.rendered" />
+				<div class="content privacy-policy max-w-3xl" v-html="page.content.rendered" />
 			</section>
 		</transition>
 	</div>
@@ -53,10 +53,21 @@ export default {
 
 <style lang="scss">
 .privacy-policy {
+	h1 {
+		@apply text-2xl font-medium text-gray-dark mb-4 mt-8;
+	}
 	h2 {
-		@apply text-2xl font-medium text-gray-dark mb-4;
-		&:not(:first-child) {
-			@apply mt-8
+		@apply text-2xl font-medium text-gray-dark mb-4 mt-8;
+	}
+	h3 {
+		@apply text-xl font-medium text-gray-dark mb-4 mt-8;
+	}
+	p {
+		@apply mb-2
+	}
+	ul {
+		li {
+			@apply mb-2
 		}
 	}
 }

@@ -18,7 +18,7 @@
 					to="/projects"
 					class="btn text-gray border-gray-medium hover:border-gray-dark hover:bg-gray-dark hover:text-gray-light sm:!hidden"
 				>
-					<span class="mr-4">Все проекты</span>
+					<span class="mr-4">More projects</span>
 					<svg width="4" height="7" viewBox="0 0 4 7" fill="none">
 						<path d="M0 0L4 3.5L0 7V0Z" fill="currentColor" />
 					</svg>
