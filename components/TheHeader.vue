@@ -108,7 +108,7 @@
 		</div>
 		<transition name="mobile-menu">
 			<div v-show="mobileMenu" class="cc-mobile-menu absolute z-20 mx-3 p-3 pt-6 bg-gray-light text-gray-dark rounded-2xl">
-				<p class="font-title font-medium from-gray-dark text-xl mb-4">Меню</p>
+				<p class="font-title font-medium from-gray-dark text-xl mb-4">Menu</p>
 				<nav class="text-gray">
 					<ul>
 						<li class="my-2">
