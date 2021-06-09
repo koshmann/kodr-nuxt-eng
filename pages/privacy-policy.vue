@@ -54,7 +54,7 @@ export default {
 <style lang="scss">
 .privacy-policy {
 	h1 {
-		@apply text-2xl font-medium text-gray-dark mb-4 mt-8;
+		@apply text-2xl font-medium text-gray-dark mb-4 mt-8; 
 	}
 	h2 {
 		@apply text-2xl font-medium text-gray-dark mb-4 mt-8;
