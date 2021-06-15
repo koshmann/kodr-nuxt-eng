@@ -13,7 +13,7 @@
 					<h2 class="text-gray-dark text-4xl font-medium sm:text-2xl">
 						{{ project.title.rendered }}
 					</h2>
-					<div class="relative text-gray text-right">
+					<div class="relative text-gray text-right"> 
 						<div
 							v-if="project._embedded['wp:term']"
 							class="flex justify-end text-gray-dark sm:justify-start sm:mt-3"
