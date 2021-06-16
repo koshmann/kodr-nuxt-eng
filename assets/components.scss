@@ -3,7 +3,7 @@
 }
 
 .tag {
-	@apply inline-flex flex-row items-center select-none px-3 py-2 mr-3 border-2 cursor-pointer rounded-lg transition-all duration-200 hover:text-white hover:transform hover:scale-95;
+	@apply inline-flex flex-row items-center select-none px-3 py-2 mr-3 border-2 cursor-pointer rounded transition-all duration-200 hover:text-white hover:transform hover:scale-95;
 }
 
 .btn-link {

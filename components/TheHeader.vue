@@ -65,6 +65,9 @@
 				</div>
 
 				<div class="header-button text-right z-10 select-none sm:hidden">
+					<a href="https://kodr-agency.ru/" class="mr-4 hover:underline">
+						<span>RU</span>
+					</a>
 					<nuxt-link 
 						to="/contacts"
 						class="btn border-red hover:bg-red hover:text-gray-light"
