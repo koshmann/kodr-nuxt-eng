@@ -136,3 +136,17 @@
 		@apply block;
 	}
 }
+
+.image-center-block {
+    grid-template-areas: ". . img img img img . .";
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+.image-center-block .image {
+    grid-area: img;
+}
+@media (max-width: 767px) {
+	.image-center-block {
+		grid-template-areas: "img img img img img img img img";
+	}
+}
