@@ -55,7 +55,7 @@
 								'transform translate-y-4 rotate-6 origin-left opacity-0 transition-all duration-200 delay-75': !menuActive,
 							}"
 						>
-							Contacs
+							Contacts
 						</nuxt-link>
 					</nav>
 				</div>

@@ -21,8 +21,8 @@ module.exports = {
 			black: '#333',
 		},
 		fontFamily: {
-			title: ['TT Firs Neue', 'sans-serif'],
-			body: ['TT Firs Neue', 'sans-serif'],
+			title: ['Montserrat', 'sans-serif'],
+			body: ['Montserrat', 'sans-serif'],
 		},
 		screens: {
 			'sm': {'min': '300px', 'max': '767px'},
