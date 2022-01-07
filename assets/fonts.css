@@ -18,5 +18,5 @@ src: local(''),
 }
 
 .player .vp-sidedock .box {
-	display: none !important;
+	display: none !important;  
 }
